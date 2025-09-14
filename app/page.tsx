@@ -53,7 +53,7 @@ const ClubPage: React.FC = () => {
       </p>
 
       <a
-        href="https://example.com/application"
+        href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform?usp=dialog"
         target="_blank"
         rel="noopener noreferrer"
         style={{
