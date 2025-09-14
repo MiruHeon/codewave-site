@@ -49,7 +49,7 @@ const ClubPage: React.FC = () => {
       </p>
 
       <p style={{ marginTop: '2rem', fontSize: '1.05rem' }}>
-        관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
+        그 코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
       </p>
 
       <a
@@ -79,6 +79,18 @@ const ClubPage: React.FC = () => {
       >
         지원서 작성하러 가기
       </a>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/3JXDh3knK34"
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+        style={{ marginTop: '2rem', borderRadius: '12px' }}
+      ></iframe>
+
     </main>
   );
 };
