@@ -89,25 +89,64 @@ export default function GalleryPage() {
   };
 
   return (
-    <div style={{ maxWidth: 900, margin: '40px auto', padding: '0 20px', fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }}>
-      <h1 style={{ textAlign: 'center', marginBottom: 30, color: '#222' }}>홍익갤</h1>
+    <div
+      style={{
+        minHeight: '100vh',
+        padding: '40px 20px',
+        background: 'linear-gradient(135deg, #0f2027, #203a43, #2c5364)',
+        fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        color: 'white',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      <h1
+        style={{
+          marginBottom: 40,
+          fontWeight: '700',
+          fontSize: '2.8rem',
+          textShadow: '0 2px 8px rgba(0,0,0,0.7)',
+        }}
+      >
+        홍익갤러리
+      </h1>
 
-      <section style={{ marginBottom: 50, backgroundColor: '#f9f9f9', padding: 20, borderRadius: 8, boxShadow: '0 2px 6px rgba(0,0,0,0.1)' }}>
-        <h2 style={{ marginBottom: 12, color: '#444' }}>글 작성하기</h2>
+      <section
+        style={{
+          width: '100%',
+          maxWidth: 800,
+          marginBottom: 60,
+          background: 'rgba(255, 255, 255, 0.1)',
+          borderRadius: 20,
+          padding: 30,
+          boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+          backdropFilter: 'blur(10px)',
+          WebkitBackdropFilter: 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.18)',
+        }}
+      >
+        <h2 style={{ marginBottom: 20, fontWeight: '600' }}>글 작성하기</h2>
         <input
           placeholder="제목"
           value={title}
           onChange={e => setTitle(e.target.value)}
           style={{
             width: '100%',
-            padding: '12px 14px',
-            marginBottom: 10,
-            borderRadius: 6,
-            border: '1px solid #ccc',
-            fontSize: 16,
+            padding: '14px 18px',
+            marginBottom: 15,
+            borderRadius: 15,
+            border: 'none',
+            fontSize: 18,
+            background: 'rgba(255, 255, 255, 0.15)',
+            color: 'white',
             outline: 'none',
             boxSizing: 'border-box',
+            boxShadow: 'inset 0 0 10px rgba(255,255,255,0.1)',
+            transition: 'background 0.3s',
           }}
+          onFocus={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)')}
+          onBlur={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)')}
         />
         <textarea
           placeholder="내용"
@@ -116,39 +155,62 @@ export default function GalleryPage() {
           rows={5}
           style={{
             width: '100%',
-            padding: '12px 14px',
-            marginBottom: 10,
-            borderRadius: 6,
-            border: '1px solid #ccc',
+            padding: '14px 18px',
+            marginBottom: 20,
+            borderRadius: 15,
+            border: 'none',
             fontSize: 16,
+            background: 'rgba(255, 255, 255, 0.15)',
+            color: 'white',
             resize: 'vertical',
             outline: 'none',
             boxSizing: 'border-box',
+            boxShadow: 'inset 0 0 10px rgba(255,255,255,0.1)',
+            transition: 'background 0.3s',
           }}
+          onFocus={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.25)')}
+          onBlur={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)')}
         />
         <button
           onClick={handleAddPost}
           style={{
-            backgroundColor: '#0078D7',
+            backgroundColor: 'rgba(255, 255, 255, 0.25)',
             color: 'white',
             border: 'none',
-            padding: '12px 24px',
-            borderRadius: 6,
-            fontSize: 16,
+            padding: '14px 32px',
+            borderRadius: 30,
+            fontSize: 18,
             cursor: 'pointer',
-            transition: 'background-color 0.3s',
+            fontWeight: '600',
+            boxShadow: '0 4px 15px rgba(255, 255, 255, 0.3)',
+            transition: 'background-color 0.3s, box-shadow 0.3s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#005fa3')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#0078D7')}
+          onMouseEnter={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.45)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 255, 255, 0.6)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.25)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 255, 255, 0.3)';
+          }}
         >
           글 작성
         </button>
       </section>
 
-      <section>
-        <h2 style={{ marginBottom: 20, color: '#444' }}>글 목록</h2>
+      <section
+        style={{
+          width: '100%',
+          maxWidth: 800,
+        }}
+      >
+        <h2 style={{ marginBottom: 25, fontWeight: '600', textAlign: 'center' }}>
+          글 목록
+        </h2>
         {posts.length === 0 && (
-          <p style={{ textAlign: 'center', color: '#888' }}>작성된 글이 없습니다.</p>
+          <p style={{ textAlign: 'center', color: 'rgba(255,255,255,0.6)', fontStyle: 'italic' }}>
+            작성된 글이 없습니다.
+          </p>
         )}
         {posts.map(post => (
           <PostItem
@@ -177,73 +239,104 @@ function PostItem({ post, onDelete, onLike, onAddComment }: PostItemProps) {
   return (
     <div
       style={{
-        border: '1px solid #ddd',
-        borderRadius: 8,
-        padding: 20,
+        background: 'rgba(255, 255, 255, 0.1)',
+        borderRadius: 20,
+        padding: 25,
         marginBottom: 30,
-        backgroundColor: '#fff',
-        boxShadow: '0 1px 4px rgba(0,0,0,0.05)',
+        boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
+        backdropFilter: 'blur(12px)',
+        WebkitBackdropFilter: 'blur(12px)',
+        border: '1px solid rgba(255, 255, 255, 0.2)',
+        color: 'white',
       }}
     >
-      <h3 style={{ marginBottom: 8, color: '#222' }}>{post.title}</h3>
+      <h3 style={{ marginBottom: 12, fontWeight: '700', fontSize: '1.5rem' }}>{post.title}</h3>
       <p
         style={{
           whiteSpace: 'pre-wrap',
-          lineHeight: 1.5,
-          color: '#333',
-          marginBottom: 12,
-          fontSize: 15,
+          lineHeight: 1.6,
+          marginBottom: 18,
+          fontSize: 16,
+          color: 'rgba(255, 255, 255, 0.85)',
         }}
       >
         {post.content}
       </p>
-      <p style={{ fontSize: 12, color: '#777', marginBottom: 12 }}>
+      <p
+        style={{
+          fontSize: 13,
+          color: 'rgba(255, 255, 255, 0.55)',
+          marginBottom: 18,
+          userSelect: 'none',
+        }}
+      >
         작성일: {new Date(post.createdAt).toLocaleString()}
       </p>
-      <div style={{ marginBottom: 12 }}>
+
+      <div style={{ marginBottom: 20, display: 'flex', gap: 12 }}>
         <button
           onClick={onLike}
           style={{
-            backgroundColor: '#ff7043',
+            flex: '1 0 auto',
+            backgroundColor: 'rgba(255, 69, 0, 0.7)',
             border: 'none',
-            color: 'white',
-            padding: '6px 14px',
-            borderRadius: 20,
+            padding: '10px 0',
+            borderRadius: 30,
             cursor: 'pointer',
-            marginRight: 10,
-            fontSize: 14,
+            fontWeight: '600',
+            fontSize: 16,
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(255, 69, 0, 0.6)',
+            transition: 'background-color 0.3s, box-shadow 0.3s',
             userSelect: 'none',
-            transition: 'background-color 0.2s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#e65c35')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#ff7043')}
+          onMouseEnter={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 69, 0, 0.85)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 69, 0, 0.8)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 69, 0, 0.7)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 69, 0, 0.6)';
+          }}
         >
           👍 추천 {post.likes}
         </button>
+
         <button
           onClick={onDelete}
           style={{
-            backgroundColor: '#e53935',
+            flex: '1 0 auto',
+            backgroundColor: 'rgba(255, 0, 0, 0.7)',
             border: 'none',
-            color: 'white',
-            padding: '6px 14px',
-            borderRadius: 20,
+            padding: '10px 0',
+            borderRadius: 30,
             cursor: 'pointer',
-            fontSize: 14,
+            fontWeight: '600',
+            fontSize: 16,
+            color: 'white',
+            boxShadow: '0 4px 15px rgba(255, 0, 0, 0.6)',
+            transition: 'background-color 0.3s, box-shadow 0.3s',
             userSelect: 'none',
-            transition: 'background-color 0.2s',
           }}
-          onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#b72b24')}
-          onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#e53935')}
+          onMouseEnter={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 0, 0, 0.85)';
+            e.currentTarget.style.boxShadow = '0 6px 20px rgba(255, 0, 0, 0.8)';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.backgroundColor = 'rgba(255, 0, 0, 0.7)';
+            e.currentTarget.style.boxShadow = '0 4px 15px rgba(255, 0, 0, 0.6)';
+          }}
         >
           삭제
         </button>
       </div>
 
       <div>
-        <h4 style={{ marginBottom: 10, color: '#555' }}>댓글</h4>
+        <h4 style={{ marginBottom: 16, fontWeight: '600', color: 'rgba(255,255,255,0.8)' }}>
+          댓글
+        </h4>
         {post.comments.length === 0 && (
-          <p style={{ color: '#aaa', fontStyle: 'italic', marginBottom: 10 }}>
+          <p style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.5)', marginBottom: 15 }}>
             댓글이 없습니다.
           </p>
         )}
@@ -251,33 +344,39 @@ function PostItem({ post, onDelete, onLike, onAddComment }: PostItemProps) {
           <div
             key={comment.id}
             style={{
-              padding: '8px 12px',
-              borderBottom: '1px solid #eee',
-              marginBottom: 6,
-              borderRadius: 6,
-              backgroundColor: '#f5f5f5',
+              background: 'rgba(255, 255, 255, 0.12)',
+              padding: '10px 15px',
+              borderRadius: 15,
+              marginBottom: 12,
+              boxShadow: 'inset 0 0 10px rgba(255,255,255,0.1)',
+              userSelect: 'text',
             }}
           >
-            <p style={{ margin: 0, color: '#333' }}>{comment.text}</p>
-            <small style={{ color: '#888' }}>
+            <p style={{ margin: 0, fontSize: 15, color: 'rgba(255,255,255,0.9)' }}>{comment.text}</p>
+            <small style={{ color: 'rgba(255,255,255,0.6)' }}>
               {new Date(comment.createdAt).toLocaleString()}
             </small>
           </div>
         ))}
-        <div style={{ marginTop: 12, display: 'flex', gap: 10 }}>
+        <div style={{ marginTop: 20, display: 'flex', gap: 15 }}>
           <input
             placeholder="댓글 작성"
             value={commentText}
             onChange={e => setCommentText(e.target.value)}
             style={{
               flexGrow: 1,
-              padding: '8px 12px',
-              borderRadius: 20,
-              border: '1px solid #ccc',
-              fontSize: 14,
+              padding: '12px 18px',
+              borderRadius: 30,
+              border: 'none',
+              fontSize: 16,
               outline: 'none',
-              boxSizing: 'border-box',
+              background: 'rgba(255, 255, 255, 0.15)',
+              color: 'white',
+              boxShadow: 'inset 0 0 10px rgba(255,255,255,0.12)',
+              transition: 'background 0.3s',
             }}
+            onFocus={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.3)')}
+            onBlur={e => (e.currentTarget.style.background = 'rgba(255, 255, 255, 0.15)')}
           />
           <button
             onClick={() => {
@@ -285,20 +384,28 @@ function PostItem({ post, onDelete, onLike, onAddComment }: PostItemProps) {
               setCommentText('');
             }}
             style={{
-              backgroundColor: '#0078D7',
-              color: 'white',
+              backgroundColor: 'rgba(0, 123, 255, 0.7)',
               border: 'none',
-              padding: '8px 18px',
-              borderRadius: 20,
+              padding: '12px 28px',
+              borderRadius: 30,
+              fontSize: 16,
+              color: 'white',
               cursor: 'pointer',
-              fontSize: 14,
+              fontWeight: '600',
+              boxShadow: '0 4px 15px rgba(0, 123, 255, 0.6)',
+              transition: 'background-color 0.3s, box-shadow 0.3s',
               userSelect: 'none',
-              transition: 'background-color 0.3s',
             }}
-            onMouseEnter={e => (e.currentTarget.style.backgroundColor = '#005fa3')}
-            onMouseLeave={e => (e.currentTarget.style.backgroundColor = '#0078D7')}
+            onMouseEnter={e => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 123, 255, 0.85)';
+              e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 123, 255, 0.8)';
+            }}
+            onMouseLeave={e => {
+              e.currentTarget.style.backgroundColor = 'rgba(0, 123, 255, 0.7)';
+              e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 123, 255, 0.6)';
+            }}
           >
-            댓글 달기
+            댓글 등록
           </button>
         </div>
       </div>
