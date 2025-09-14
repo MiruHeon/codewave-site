@@ -1,3 +1,13 @@
+# 홍대부중 코드웨이브 웹사이트 제작계획
+
+어느날 갑자기 동아리의 소속감을 더 느끼고 싶었던 유솔은 자신이 속해있는 동아리의 웹사이트를 제작해보고 싶다는 생각이 들었다.
+
+궁금증을 절때 가만히 두질 않는 유솔은 바로 Vercel 플랫폼을 이용하여 웹사이트를 제작해보기로 한다.
+
+
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
