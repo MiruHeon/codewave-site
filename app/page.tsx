@@ -1,9 +1,18 @@
-"use client"; // ✅ 반드시 최상단에 넣기
+"use client";
 
 import { useState } from "react";
 
+// 게시물 타입 정의
+type Post = {
+  id: number;
+  content: string;
+  likes: number;
+  comments: string[];
+  commentText: string;
+};
+
 export default function App() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<Post[]>([]); // ✅ 타입 명시
   const [newPost, setNewPost] = useState("");
 
   const addPost = () => {
@@ -15,7 +24,7 @@ export default function App() {
     setNewPost("");
   };
 
-  const addComment = (postId) => {
+  const addComment = (postId: number) => {
     setPosts(prev =>
       prev.map(post => {
         if (post.id === postId && post.commentText.trim() !== "") {
@@ -30,13 +39,13 @@ export default function App() {
     );
   };
 
-  const likePost = (postId) => {
+  const likePost = (postId: number) => {
     setPosts(prev =>
       prev.map(post => post.id === postId ? { ...post, likes: post.likes + 1 } : post)
     );
   };
 
-  const handleCommentChange = (postId, value) => {
+  const handleCommentChange = (postId: number, value: string) => {
     setPosts(prev =>
       prev.map(post => post.id === postId ? { ...post, commentText: value } : post)
     );
