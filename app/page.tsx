@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ClubPage: React.FC = () => {
-  const seoulNationalBlue = '#003264';
+  const logoBlue = '#1A237E';
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
@@ -13,37 +13,39 @@ const ClubPage: React.FC = () => {
   return (
     <main
       style={{
-        padding: '2rem',
-        maxWidth: '600px',
-        margin: '0 auto',
-        textAlign: 'center',
-        backgroundColor: seoulNationalBlue,
+        width: '100vw',
+        height: '100vh',
+        backgroundColor: logoBlue,
         color: '#fff',
-        minHeight: '100vh',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
+        padding: '2rem',
         opacity: fadeIn ? 1 : 0,
         transition: 'opacity 1.2s ease-in-out',
+        textAlign: 'center',
         fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
       }}
     >
       <img
         src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
-        alt="동아리 로고"
-        style={{ width: '150px', height: 'auto', marginBottom: '1.5rem' }}
+        alt="코드웨이브 로고"
+        style={{
+          width: '160px',
+          height: 'auto',
+          marginBottom: '2rem',
+        }}
       />
 
-      <h1 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '1rem' }}>
+      <h1 style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '1.2rem' }}>
         코드웨이브를 소개합니다!
       </h1>
 
-      <p style={{ fontSize: '1.1rem', lineHeight: '1.6', marginBottom: '0.5rem' }}>
-        코드웨이브는 자율성이 보장되고, IT에 대해 공부할 수 있는 최적의 공간입니다.
-      </p>
-      <p style={{ fontSize: '1.1rem', lineHeight: '1.6' }}>
-        매달 정기 모임과 다양한 프로젝트, 교육을 통해 서로의 역량을 키워가고 있어요.
+      <p style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
+        코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다.
+        <br />
+        매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장해요.
       </p>
 
       <p style={{ marginTop: '2rem', fontSize: '1.05rem' }}>
@@ -58,7 +60,7 @@ const ClubPage: React.FC = () => {
           display: 'inline-block',
           padding: '1rem 2rem',
           backgroundColor: '#fff',
-          color: seoulNationalBlue,
+          color: logoBlue,
           borderRadius: '8px',
           textDecoration: 'none',
           marginTop: '1.5rem',
@@ -67,12 +69,12 @@ const ClubPage: React.FC = () => {
           transition: 'all 0.3s ease',
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = seoulNationalBlue;
+          e.currentTarget.style.backgroundColor = logoBlue;
           e.currentTarget.style.color = '#fff';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.backgroundColor = '#fff';
-          e.currentTarget.style.color = seoulNationalBlue;
+          e.currentTarget.style.color = logoBlue;
         }}
       >
         지원서 작성하러 가기
