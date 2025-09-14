@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 const ClubPage: React.FC = () => {
@@ -16,7 +18,7 @@ const ClubPage: React.FC = () => {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center', // 추가해서 중앙 정렬 강화
+        alignItems: 'center',
       }}
     >
       <img
@@ -25,12 +27,13 @@ const ClubPage: React.FC = () => {
         style={{ width: '150px', height: 'auto', marginBottom: '1.5rem' }}
       />
 
-      <h1>코드웨이브</h1>
+      <h1>코드웨이브 소개합니다!</h1>
       <p>
-        코드웨이브는 자율성이 보장되고, IT에 대해 공부할 수 있는 최적의 공간입니다. 
-        매달 정기 모임과 다양한 프로젝트, 교육을 진행해보며 서로의 역량을 키우고 있습니다.
+        코드웨이브는 자율성이 보장되고, IT에 대해 공부할 수 있는 최적의 공간입니다.
+        또한 매달 정기 모임과 다양한 프로젝트, 교육을 진행해보며 서로의 역량을 키우고 있습
       </p>
       <p>관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.</p>
+
       <a
         href="https://example.com/application"
         target="_blank"
