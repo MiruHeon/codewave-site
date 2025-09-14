@@ -99,6 +99,18 @@ const ClubPage: React.FC = () => {
         style={{ marginTop: '2rem', borderRadius: '12px' }}
       ></iframe>
 
+      <h1
+      style={{
+          fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+          fontSize: "2.8rem",
+          fontWeight: 900,
+          marginBottom: "1.2rem",
+          letterSpacing: "-2px",
+        }}
+      >
+        ACHIEVE INNOVATION
+      </h1>
+
     </main>
   );
 };
