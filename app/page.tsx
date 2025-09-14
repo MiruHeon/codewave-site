@@ -14,18 +14,20 @@ const ClubPage: React.FC = () => {
     <main
       style={{
         width: '100vw',
-        height: '100vh',
+        minHeight: '100vh',
         backgroundColor: logoBlue,
         color: '#fff',
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center',
         padding: '2rem',
         opacity: fadeIn ? 1 : 0,
         transition: 'opacity 1.2s ease-in-out',
         textAlign: 'center',
         fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
+        boxSizing: 'border-box',
+        overflowY: 'auto',
       }}
     >
       <img
@@ -39,12 +41,12 @@ const ClubPage: React.FC = () => {
       />
 
       <h1
-      style={{
+        style={{
           fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
-          fontSize: "2.8rem",
+          fontSize: '2.8rem',
           fontWeight: 900,
-          marginBottom: "1.2rem",
-          letterSpacing: "-2px",
+          marginBottom: '1.2rem',
+          letterSpacing: '-2px',
         }}
       >
         코드웨이브를 소개합니다!
@@ -56,7 +58,7 @@ const ClubPage: React.FC = () => {
         매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장해요.
       </p>
 
-      <p style={{ marginTop: '2rem', fontSize: '1.05rem' }}>
+      <p style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}>
         그 코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
       </p>
 
@@ -100,17 +102,17 @@ const ClubPage: React.FC = () => {
       ></iframe>
 
       <h1
-      style={{
+        style={{
           fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
-          fontSize: "2.8rem",
+          fontSize: '2.8rem',
           fontWeight: 900,
-          marginBottom: "1.2rem",
-          letterSpacing: "-2px",
+          marginBottom: '1.2rem',
+          letterSpacing: '-2px',
+          marginTop: '2rem',
         }}
       >
         ACHIEVE INNOVATION
       </h1>
-
     </main>
   );
 };
