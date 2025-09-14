@@ -38,7 +38,15 @@ const ClubPage: React.FC = () => {
         }}
       />
 
-      <h1 style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '1.2rem' }}>
+      <h1
+      style={{
+          fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+          fontSize: "2.8rem",
+          fontWeight: 900,
+          marginBottom: "1.2rem",
+          letterSpacing: "-2px",
+        }}
+      >
         코드웨이브를 소개합니다!
       </h1>
 
