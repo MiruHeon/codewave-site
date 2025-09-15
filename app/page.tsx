@@ -10,9 +10,15 @@ const ClubPage: React.FC = () => {
     setFadeIn(true);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <>
-      {/* 네비게이션 바 */}
       <header
         style={{
           width: '100%',
@@ -28,7 +34,6 @@ const ClubPage: React.FC = () => {
           zIndex: 1000,
         }}
       >
-        {/* 왼쪽 로고/텍스트 */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <h3
             style={{
@@ -51,30 +56,36 @@ const ClubPage: React.FC = () => {
           />
         </div>
 
-        {/* 오른쪽 메뉴 */}
         <nav style={{ display: 'flex', gap: '1.5rem' }}>
-          <a
-            href="#intro"
-            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
+          <button
+            onClick={() => scrollToSection('intro')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
           >
             소개
-          </a>
-          <a
-            href="#apply"
-            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
-          >
-            지원
-          </a>
-          <a
-            href="#exhibition"
-            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
+          </button>
+          <button
+            onClick={() => scrollToSection('exhibition')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
           >
             졸업전시회
-          </a>
+          </button>
         </nav>
       </header>
 
-      {/* 메인 컨텐츠 */}
       <main
         style={{
           width: '100vw',
@@ -96,7 +107,6 @@ const ClubPage: React.FC = () => {
           msOverflowStyle: 'none',
         }}
       >
-        {/* 여기부터 기존 콘텐츠 */}
         <h1
           id="intro"
           style={{
@@ -117,10 +127,9 @@ const ClubPage: React.FC = () => {
         </p>
 
         <p
-          id="apply"
           style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}
         >
-          그 코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
+          코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
         </p>
 
         <a
@@ -173,11 +182,27 @@ const ClubPage: React.FC = () => {
             marginTop: '2rem',
           }}
         >
+          졸업전시회
+        </h1>
+
+        <h1
+          style={{
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
+            marginTop: '2rem',
+          }}
+        >
           ACHIEVE INNOVATION
         </h1>
       </main>
 
-      <style jsx>{`
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
         main::-webkit-scrollbar {
           display: none;
         }
