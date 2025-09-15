@@ -12,39 +12,28 @@ const ClubPage: React.FC = () => {
 
   return (
     <>
-      <main
+      {/* 네비게이션 바 */}
+      <header
         style={{
-            width: '100vw',
-            minHeight: '100vh',
-            backgroundColor: logoBlue,
-            color: '#fff',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-start',
-            alignItems: 'flex-start',
-            padding: '2rem',
-            opacity: fadeIn ? 1 : 0,
-            transition: 'opacity 1.2s ease-in-out',
-            textAlign: 'left',
-            fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
-            boxSizing: 'border-box',
-            overflowY: 'auto',
-            scrollbarWidth: 'none',
-            msOverflowStyle: 'none',
-          }}
-        >
-
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.8rem',
-          }}
-        >
+          width: '100%',
+          backgroundColor: '#fff',
+          color: logoBlue,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '1rem 2rem',
+          boxSizing: 'border-box',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000,
+        }}
+      >
+        {/* 왼쪽 로고/텍스트 */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <h3
             style={{
               fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
-              fontSize: '2rem',
+              fontSize: '1.6rem',
               fontWeight: 900,
               margin: 0,
               letterSpacing: '-1px',
@@ -52,18 +41,64 @@ const ClubPage: React.FC = () => {
           >
             홍대부중 코드웨이브
           </h3>
-        
           <img
             src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
             alt="코드웨이브 로고"
             style={{
-              height: '2rem',
+              height: '1.6rem',
               width: 'auto',
             }}
           />
         </div>
-        
+
+        {/* 오른쪽 메뉴 */}
+        <nav style={{ display: 'flex', gap: '1.5rem' }}>
+          <a
+            href="#intro"
+            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
+          >
+            소개
+          </a>
+          <a
+            href="#apply"
+            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
+          >
+            지원
+          </a>
+          <a
+            href="#exhibition"
+            style={{ textDecoration: 'none', color: logoBlue, fontWeight: 'bold' }}
+          >
+            졸업전시회
+          </a>
+        </nav>
+      </header>
+
+      {/* 메인 컨텐츠 */}
+      <main
+        style={{
+          width: '100vw',
+          minHeight: '100vh',
+          backgroundColor: logoBlue,
+          color: '#fff',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
+          padding: '2rem',
+          opacity: fadeIn ? 1 : 0,
+          transition: 'opacity 1.2s ease-in-out',
+          textAlign: 'left',
+          fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
+          boxSizing: 'border-box',
+          overflowY: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        {/* 여기부터 기존 콘텐츠 */}
         <h1
+          id="intro"
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
@@ -81,7 +116,10 @@ const ClubPage: React.FC = () => {
           매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장해요.
         </p>
 
-        <p style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}>
+        <p
+          id="apply"
+          style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}
+        >
           그 코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
         </p>
 
@@ -114,6 +152,7 @@ const ClubPage: React.FC = () => {
         </a>
 
         <iframe
+          id="exhibition"
           width="560"
           height="315"
           src="https://www.youtube.com/embed/25q75Ca2nOQ"
@@ -136,17 +175,6 @@ const ClubPage: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
-
-        <img
-          src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
-          alt="코드웨이브 로고"
-          style={{
-            width: '160px',
-            height: 'auto',
-            marginBottom: '2rem',
-          }}
-        />
-        
       </main>
 
       <style jsx>{`
