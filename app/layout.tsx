@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: "홍대부중 코드웨이브",
   description: "홍대부중 IT 동아리 코드웨이브",
   icons: {
-    icon: "https://raw.githubusercontent.com/MiruHeon/codewave-site/refs/heads/main/app/codewav.ico?token=GHSAT0AAAAAADHBQ42Q4RN4VNNJD4WD7ZV42GG2AUA",
+    icon: "https://raw.githubusercontent.com/MiruHeon/Normal-Project/refs/heads/main/Codewave%20logo.png",
   },
 };
 
