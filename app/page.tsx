@@ -38,16 +38,16 @@ const ClubPage: React.FC = () => {
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '1rem',
+            gap: '0.8rem',
           }}
         >
           <h3
             style={{
               fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
-              fontSize: '2.8rem',
+              fontSize: '2rem',
               fontWeight: 900,
               margin: 0,
-              letterSpacing: '-2px',
+              letterSpacing: '-1px',
             }}
           >
             홍대부중 코드웨이브
@@ -57,23 +57,12 @@ const ClubPage: React.FC = () => {
             src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
             alt="코드웨이브 로고"
             style={{
-              height: '2.8rem',
+              height: '2rem',
               width: 'auto',
             }}
           />
         </div>
-
-
-        <img
-          src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
-          alt="코드웨이브 로고"
-          style={{
-            width: '160px',
-            height: 'auto',
-            marginBottom: '2rem',
-          }}
-        />
-
+        
         <h1
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
@@ -147,6 +136,17 @@ const ClubPage: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
+
+        <img
+          src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
+          alt="코드웨이브 로고"
+          style={{
+            width: '160px',
+            height: 'auto',
+            marginBottom: '2rem',
+          }}
+        />
+        
       </main>
 
       <style jsx>{`
