@@ -14,25 +14,26 @@ const ClubPage: React.FC = () => {
     <>
       <main
         style={{
-          width: '100vw',
-          minHeight: '100vh',
-          backgroundColor: logoBlue,
-          color: '#fff',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          padding: '2rem',
-          opacity: fadeIn ? 1 : 0,
-          transition: 'opacity 1.2s ease-in-out',
-          textAlign: 'center',
-          fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
-          boxSizing: 'border-box',
-          overflowY: 'auto',
-          scrollbarWidth: 'none', // Firefox
-          msOverflowStyle: 'none', // IE, Edge
-        }}
-      >
+            width: '100vw',
+            minHeight: '100vh',
+            backgroundColor: logoBlue,
+            color: '#fff',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'flex-start',
+            padding: '2rem',
+            opacity: fadeIn ? 1 : 0,
+            transition: 'opacity 1.2s ease-in-out',
+            textAlign: 'left',
+            fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
+            boxSizing: 'border-box',
+            overflowY: 'auto',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
+          }}
+        >
+
         <img
           src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
           alt="코드웨이브 로고"
