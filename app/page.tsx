@@ -172,7 +172,7 @@ const ClubPage: React.FC = () => {
           style={{ marginTop: '2rem', borderRadius: '12px' }}
         ></iframe>
 
-        <h1
+                <h1
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
@@ -184,6 +184,32 @@ const ClubPage: React.FC = () => {
         >
           포트폴리오
         </h1>
+        
+        <a
+          href="/chaja-pdf.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/chaja-img.png"
+            alt="포트폴리오 미리보기"
+            style={{
+              width: "400px",
+              height: "auto",
+              borderRadius: "12px",
+              cursor: "pointer",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          />
+        </a>
+
 
         <h1
           style={{
