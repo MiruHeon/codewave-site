@@ -81,7 +81,7 @@ const ClubPage: React.FC = () => {
               fontSize: '1rem',
             }}
           >
-            졸업전시회
+            포트폴리오
           </button>
         </nav>
       </header>
@@ -182,7 +182,7 @@ const ClubPage: React.FC = () => {
             marginTop: '2rem',
           }}
         >
-          졸업전시회
+          포트폴리오
         </h1>
 
         <h1
