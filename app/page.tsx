@@ -110,7 +110,7 @@ const ClubPage: React.FC = () => {
 
         <p>
           <img 
-            src="/cw_img" 
+            src="/cw_img.png" 
             alt="코드웨이브 로고" 
             width="50" 
             height="50"
