@@ -83,6 +83,19 @@ const ClubPage: React.FC = () => {
           >
             포트폴리오
           </button>
+          <button
+            onClick={() => scrollToSection('curriculum')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            커리큘럼
+          </button>
         </nav>
       </header>
 
@@ -107,7 +120,6 @@ const ClubPage: React.FC = () => {
           msOverflowStyle: 'none',
         }}
       >
-
         <p>
           <img 
             src="/cw_img.png" 
@@ -117,7 +129,6 @@ const ClubPage: React.FC = () => {
           />
         </p>
 
-        
         <h1
           id="intro"
           style={{
@@ -183,7 +194,7 @@ const ClubPage: React.FC = () => {
           style={{ marginTop: '2rem', borderRadius: '12px' }}
         ></iframe>
 
-                <h1
+        <h1
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
@@ -221,6 +232,30 @@ const ClubPage: React.FC = () => {
           />
         </a>
 
+        <h1
+          id="curriculum"
+          style={{
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
+            marginTop: '2rem',
+          }}
+        >
+          커리큘럼
+        </h1>
+
+        <ul style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
+          <li>
+            <strong>프로그래밍</strong> <br />
+            IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
+          </li>
+          <li style={{ marginTop: '1rem' }}>
+            <strong>AI</strong> <br />
+            프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
+          </li>
+        </ul>
 
         <h1
           style={{
@@ -234,7 +269,6 @@ const ClubPage: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
-        
       </main>
 
       <style jsx global>{`
