@@ -120,13 +120,6 @@ const ClubPage: React.FC = () => {
           코드웨이브를 소개합니다!
         </h1>
 
-        <p>
-        <img
-            src="/codewav.ico"
-            alt="코드웨이브 로고"
-        />
-          </p>
-
         <p style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
           코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다.
           <br />
@@ -230,6 +223,14 @@ const ClubPage: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
+
+        <p>
+        <img
+            src="/codewav.ico"
+            alt="코드웨이브 로고"
+        />
+          </p>
+        
       </main>
 
       <style jsx global>{`
