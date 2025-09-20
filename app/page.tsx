@@ -246,16 +246,55 @@ const ClubPage: React.FC = () => {
           커리큘럼
         </h1>
 
-        <ul style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
-          <li>
-            <strong>프로그래밍</strong> <br />
-            IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
-          </li>
-          <li style={{ marginTop: '1rem' }}>
-            <strong>AI</strong> <br />
-            프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
-          </li>
-        </ul>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+          maxWidth: '800px',
+          width: '100%',
+        }}>
+          <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>프로그래밍</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
+            </p>
+          </div>
+
+          <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>AI</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
+            </p>
+          </div>
+        </div>
 
         <h1
           style={{
