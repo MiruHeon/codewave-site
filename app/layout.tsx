@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CODEWAVE",
+  title: "홍대부중 코드웨이브",
   description: "홍대부중 IT 동아리 코드웨이브",
   icons: {
     icon: "/codewav.ico",
