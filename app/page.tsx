@@ -47,7 +47,7 @@ const ClubPage: React.FC = () => {
             홍대부중 코드웨이브
           </h3>
           <img
-            src="https://github.com/MiruHeon/Normal-Project/blob/main/Codewave%20logo.png?raw=true"
+            src="/codewav.ico"
             alt="코드웨이브 로고"
             style={{
               height: '1.6rem',
