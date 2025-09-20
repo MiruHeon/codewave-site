@@ -107,6 +107,17 @@ const ClubPage: React.FC = () => {
           msOverflowStyle: 'none',
         }}
       >
+
+        <p>
+          <img 
+            src="/codewav.ico" 
+            alt="코드웨이브 로고" 
+            width="50" 
+            height="50"
+          />
+        </p>
+
+        
         <h1
           id="intro"
           style={{
@@ -223,13 +234,6 @@ const ClubPage: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
-
-        <p>
-        <img
-            src="/codewav.ico"
-            alt="코드웨이브 로고"
-        />
-          </p>
         
       </main>
 
