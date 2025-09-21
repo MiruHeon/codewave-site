@@ -207,55 +207,66 @@ const ClubPage: React.FC = () => {
           포트폴리오
         </h1>
         
-        <a
-          href="/chaja-pdf.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
+        {/* 포트폴리오 이미지 오른쪽 정렬 */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'flex-end',
+            gap: '1.5rem',
+            marginTop: '1rem',
+          }}
         >
-          <img
-            src="/chaja-img.png"
-            alt="포트폴리오 미리보기"
-            style={{
-              width: "400px",
-              height: "auto",
-              borderRadius: "12px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-              transition: "transform 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          />
-        </a>
+          <a
+            href="/chaja-pdf.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/chaja-img.png"
+              alt="포트폴리오 미리보기"
+              style={{
+                width: "400px",
+                height: "auto",
+                borderRadius: "12px",
+                cursor: "pointer",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            />
+          </a>
 
-        <a
-          href="/chatgppti.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="/chatGepeti-img.png"
-            alt="포트폴리오 미리보기"
-            style={{
-              width: "400px",
-              height: "auto",
-              borderRadius: "12px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-              transition: "transform 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          />
-        </a>
+          <a
+            href="/chatgppti.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/chatGepeti-img.png"
+              alt="포트폴리오 미리보기"
+              style={{
+                width: "400px",
+                height: "auto",
+                borderRadius: "12px",
+                cursor: "pointer",
+                boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+                transition: "transform 0.3s ease",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.05)";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
+            />
+          </a>
+        </div>
 
         <h1
           id="curriculum"
