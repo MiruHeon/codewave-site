@@ -15,8 +15,8 @@ const CodeWave: React.FC = () => {
       style={{
         background: "#fff",
         minHeight: "100vh",
-        color: "#222",
-        fontFamily: "'Noto Sans KR', '맑은 고딕', sans-serif",
+        color: "#000",
+        fontFamily: "'Noto Sans KR', sans-serif",
       }}
     >
       <div style={{ maxWidth: 950, margin: "0 auto", padding: "0 20px" }}>
@@ -34,11 +34,11 @@ const CodeWave: React.FC = () => {
             <img
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/cw_img.png?raw=true"
               alt="코드웨이브 로고"
-              style={{ width: 80, height: 80 }}
+              style={{ width: 60, height: 60 }}
             />
             <div style={{ marginLeft: 10 }}>
               <h2 style={{ margin: 0 }}>코드웨이브</h2>
-              <p style={{ fontSize: "0.9rem", color: "#555", margin: 0 }}>
+              <p style={{ fontSize: "0.85rem", color: "#555", margin: 0 }}>
                 Hongik Middle School Codewave
               </p>
             </div>
@@ -48,12 +48,19 @@ const CodeWave: React.FC = () => {
               style={{
                 listStyle: "none",
                 display: "flex",
-                gap: 20,
+                gap: 15,
                 margin: 0,
                 padding: 0,
                 alignItems: "center",
+                fontSize: "0.9rem",
               }}
             >
+              <li>
+                <a href="#portfolio">포트폴리오</a>
+              </li>
+              <li>
+                <a href="#curriculum">교육과정</a>
+              </li>
               <li>
                 <a href="#notice">공지사항</a>
               </li>
@@ -64,19 +71,12 @@ const CodeWave: React.FC = () => {
                 <a href="#gallery">갤러리</a>
               </li>
               <li>
-                <a href="#portfolio">포트폴리오</a>
-              </li>
-              <li>
-                <a href="#curriculum">교육과정</a>
-              </li>
-              <li>
                 <a href="#members">구성원</a>
               </li>
               <li>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
                   target="_blank"
-                  rel="noreferrer"
                 >
                   2기 지원
                 </a>
@@ -89,105 +89,37 @@ const CodeWave: React.FC = () => {
         <div
           style={{
             width: "100%",
-            height: 300,
+            height: 250,
             background:
               "url('https://github.com/MiruHeon/Normal-Project/blob/main/%EC%84%9C%EC%9A%B8%EC%9D%98%20%EB%8B%AC.png?raw=true') no-repeat center/cover",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
+            marginTop: 10,
           }}
         ></div>
 
-        {/* 공지사항 */}
-        <div
-          id="notice"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 6,
-            marginTop: 20,
-            padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(-40px)",
-            opacity: fadeIn ? 1 : 0,
-            transition: "all 0.8s ease 0.2s",
-          }}
-        >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
-            공지사항
-          </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10, lineHeight: "1.8" }}>
-            <li>1대 회장 류용헌 당선</li>
-            <li>1대 차장 신지욱 당선</li>
-            <li>홍대부중 동아리 '코드웨이브' 신설</li>
-          </ul>
-        </div>
-
-        {/* News */}
-        <div
-          id="news"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 6,
-            marginTop: 20,
-            padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(40px)",
-            opacity: fadeIn ? 1 : 0,
-            transition: "all 0.8s ease 0.4s",
-          }}
-        >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
-            News
-          </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10, lineHeight: "1.8" }}>
-            <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최 안내</li>
-          </ul>
-        </div>
-
-        {/* 갤러리 */}
-        <div
-          id="gallery"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 6,
-            marginTop: 20,
-            padding: 10,
-            transform: fadeIn ? "translateY(0)" : "translateY(40px)",
-            opacity: fadeIn ? 1 : 0,
-            transition: "all 0.8s ease 0.6s",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
-            갤러리
-          </h3>
-          <img
-            src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
-            alt="gallery1"
-            style={{
-              maxWidth: "100%",
-              borderRadius: 6,
-              marginTop: 10,
-              cursor: "pointer",
-              transition: "transform 0.3s",
-            }}
-            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
-          />
-        </div>
-
         {/* 포트폴리오 */}
-        <div
+        <section
           id="portfolio"
           style={{
             border: "1px solid #ccc",
-            borderRadius: 6,
+            borderRadius: 4,
             marginTop: 20,
             padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(-40px)",
+            transform: fadeIn ? "translateX(0)" : "translateX(-50px)",
             opacity: fadeIn ? 1 : 0,
-            transition: "all 0.8s ease 0.8s",
+            transition: "all 1s ease 0.3s",
           }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             포트폴리오
           </h3>
           <a
@@ -199,56 +131,164 @@ const CodeWave: React.FC = () => {
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
               alt="포트폴리오"
               style={{
-                width: "30%",
+                width: "40%",
                 marginTop: 10,
                 border: "1px solid #ccc",
                 borderRadius: 4,
                 transition: "transform 0.3s",
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
-              onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "scale(1.05)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "scale(1)")
+              }
             />
           </a>
-        </div>
+        </section>
 
         {/* 교육과정 */}
-        <div
+        <section
           id="curriculum"
           style={{
             border: "1px solid #ccc",
-            borderRadius: 6,
+            borderRadius: 4,
             marginTop: 20,
             padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(40px)",
+            transform: fadeIn ? "translateX(0)" : "translateX(50px)",
             opacity: fadeIn ? 1 : 0,
-            transition: "all 0.8s ease 1s",
+            transition: "all 1s ease 0.5s",
           }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             교육과정
           </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10, lineHeight: "1.8" }}>
-            <li>프로그래밍</li>
-            <li>자료구조와 알고리즘</li>
-            <li>AI</li>
+          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
+              프로그래밍
+            </li>
+            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
+              자료구조와 알고리즘
+            </li>
+            <li style={{ padding: 6 }}>AI</li>
           </ul>
-        </div>
+        </section>
+
+        {/* 공지사항 */}
+        <section
+          id="notice"
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
+        >
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
+            공지사항
+          </h3>
+          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+            <li>1대 회장 류용헌 당선</li>
+            <li>1대 차장 신지욱 당선</li>
+            <li>홍대부중 동아리 '코드웨이브' 신설</li>
+          </ul>
+        </section>
+
+        {/* News */}
+        <section
+          id="news"
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
+        >
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
+            News
+          </h3>
+          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+            <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
+          </ul>
+        </section>
+
+        {/* 갤러리 */}
+        <section
+          id="gallery"
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
+        >
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
+            갤러리
+          </h3>
+          <img
+            src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
+            alt="gallery1"
+            style={{
+              width: "100%",
+              maxWidth: 400,
+              marginTop: 10,
+              borderRadius: 4,
+              cursor: "pointer",
+            }}
+            onClick={(e) => window.open(e.currentTarget.src, "_blank")}
+          />
+        </section>
 
         {/* 구성원 */}
-        <div
+        <section
           id="members"
           style={{
             border: "1px solid #ccc",
-            borderRadius: 6,
+            borderRadius: 4,
             marginTop: 20,
             padding: 10,
           }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             구성원
           </h3>
           <p style={{ padding: 10 }}>아직 구현되지 않았습니다.</p>
-        </div>
+        </section>
 
         {/* Footer */}
         <footer
@@ -275,3 +315,4 @@ const CodeWave: React.FC = () => {
 };
 
 export default CodeWave;
+
