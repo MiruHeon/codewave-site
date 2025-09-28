@@ -117,7 +117,7 @@ const ClubPage: React.FC = () => {
         <div
           className="container"
           style={{
-            maxWidth: '950px',
+            maxWidth: '1050px',
             width: '100%',
             padding: '0 20px',
             backgroundColor: logoBlue, // 중앙 콘텐츠 배경
