@@ -27,7 +27,7 @@ const CodeWave: React.FC = () => {
             justifyContent: "space-between",
             alignItems: "center",
             padding: 10,
-            background: "#001f3f",
+            background: "#302e8f",
             color: "white",
             boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
             position: "sticky",
@@ -338,6 +338,7 @@ const CodeWave: React.FC = () => {
           >
             <p>Hongik Middle School</p>
           </a>
+          <p>copyright © 류용헌</p>
         </footer>
       </div>
     </div>
