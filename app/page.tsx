@@ -122,10 +122,8 @@ const ClubPage: React.FC = () => {
     >
         <p>
           <img 
-            src="/cw_img.png" 
+            src="https://github.com/MiruHeon/Normal-Project/blob/main/%EC%84%9C%EC%9A%B8%EC%9D%98%20%EB%8B%AC.png?raw=true" 
             alt="코드웨이브 로고" 
-            width="150" 
-            height="150"
           />
         </p>
 
