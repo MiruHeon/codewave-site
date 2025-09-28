@@ -55,45 +55,25 @@ const ClubPage: React.FC = () => {
         </div>
 
         <nav style={{ display: 'flex', gap: '1.5rem' }}>
-          <button
-            onClick={() => scrollToSection('intro')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: logoBlue,
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
-            소개
-          </button>
-          <button
-            onClick={() => scrollToSection('exhibition')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: logoBlue,
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
-            포트폴리오
-          </button>
-          <button
-            onClick={() => scrollToSection('curriculum')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: logoBlue,
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
-            커리큘럼
-          </button>
+          {['intro', 'exhibition', 'curriculum'].map((id, idx) => {
+            const names = ['소개', '포트폴리오', '커리큘럼'];
+            return (
+              <button
+                key={id}
+                onClick={() => scrollToSection(id)}
+                style={{
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  color: logoBlue,
+                  fontWeight: 'bold',
+                  fontSize: '1rem',
+                }}
+              >
+                {names[idx]}
+              </button>
+            );
+          })}
         </nav>
       </header>
 
@@ -102,7 +82,7 @@ const ClubPage: React.FC = () => {
         style={{
           width: '100%',
           minHeight: '100vh',
-          backgroundColor: '#fff', // 좌우 여백 흰색
+          backgroundColor: '#fff',
           display: 'flex',
           justifyContent: 'center',
           padding: '2rem 0',
@@ -120,7 +100,7 @@ const ClubPage: React.FC = () => {
             maxWidth: '1050px',
             width: '100%',
             padding: '0 20px',
-            backgroundColor: logoBlue, // 중앙 콘텐츠 배경
+            backgroundColor: logoBlue,
             color: '#fff',
             display: 'flex',
             flexDirection: 'column',
@@ -228,47 +208,31 @@ const ClubPage: React.FC = () => {
               flexWrap: 'wrap',
             }}
           >
-            <a href="/chaja-pdf.pdf" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/chaja-img.png"
-                alt="포트폴리오 미리보기"
-                style={{
-                  width: '400px',
-                  height: 'auto',
-                  borderRadius: '12px',
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                  transition: 'transform 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-              />
-            </a>
-
-            <a href="/chatgppti.pdf" target="_blank" rel="noopener noreferrer">
-              <img
-                src="/chatGepeti-img.png"
-                alt="포트폴리오 미리보기"
-                style={{
-                  width: '400px',
-                  height: 'auto',
-                  borderRadius: '12px',
-                  cursor: 'pointer',
-                  boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                  transition: 'transform 0.3s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'scale(1.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'scale(1)';
-                }}
-              />
-            </a>
+            {[
+              { img: '/chaja-img.png', pdf: '/chaja-pdf.pdf' },
+              { img: '/chatGepeti-img.png', pdf: '/chatgppti.pdf' },
+            ].map((item) => (
+              <a key={item.pdf} href={item.pdf} target="_blank" rel="noopener noreferrer">
+                <img
+                  src={item.img}
+                  alt="포트폴리오 미리보기"
+                  style={{
+                    width: '400px',
+                    height: 'auto',
+                    borderRadius: '12px',
+                    cursor: 'pointer',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                    transition: 'transform 0.3s ease',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'scale(1.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'scale(1)';
+                  }}
+                />
+              </a>
+            ))}
           </div>
 
           {/* 커리큘럼 */}
@@ -295,75 +259,90 @@ const ClubPage: React.FC = () => {
               width: '100%',
             }}
           >
-            <div
-              style={{
-                backgroundColor: '#fff',
-                color: logoBlue,
-                borderRadius: '12px',
-                padding: '1.5rem',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                transition: 'transform 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-              }}
-            >
-              <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>
-                프로그래밍
-              </h3>
-              <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
-              </p>
-            </div>
-
-            <div
-              style={{
-                backgroundColor: '#fff',
-                color: logoBlue,
-                borderRadius: '12px',
-                padding: '1.5rem',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
-                transition: 'transform 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
-              }}
-            >
-              <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>AI</h3>
-              <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-                프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
-              </p>
-            </div>
+            {[
+              {
+                title: '프로그래밍',
+                desc: 'IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.',
+              },
+              {
+                title: 'AI',
+                desc: '프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.',
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                style={{
+                  backgroundColor: '#fff',
+                  color: logoBlue,
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                  transition: 'transform 0.3s ease',
+                }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(-5px)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.transform = 'translateY(0)';
+                }}
+              >
+                <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>
+                  {item.title}
+                </h3>
+                <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>{item.desc}</p>
+              </div>
+            ))}
           </div>
-
-          <div class="banner"></div>
 
           {/* 공지사항 / News */}
-          <div className="content" style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
-            <div className="box" style={{ flex: 1, border: '1px solid #ccc', borderRadius: '4px', padding: '1rem', backgroundColor: '#fff', color: logoBlue }}>
-              <h3>공지사항</h3>
-              <ul>
-                <li>1대 회장 류용헌 당선</li>
-                <li>1대 차장 신지욱 당선</li>
-                <li>홍대부중 동아리 '코드웨이브' 신설</li>
-              </ul>
-            </div>
-          
-            <div className="box" style={{ flex: 1, border: '1px solid #ccc', borderRadius: '4px', padding: '1rem', backgroundColor: '#fff', color: logoBlue }}>
-              <h3>News</h3>
-              <ul>
-                <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
-              </ul>
-            </div>
+          <div
+            className="content"
+            style={{ display: 'flex', gap: '1rem', marginTop: '2rem', flexWrap: 'wrap' }}
+          >
+            {[
+              {
+                title: '공지사항',
+                items: [
+                  '1대 회장 류용헌 당선',
+                  '1대 차장 신지욱 당선',
+                  "홍대부중 동아리 '코드웨이브' 신설",
+                ],
+              },
+              {
+                title: 'News',
+                items: ['11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내'],
+              },
+            ].map((box) => (
+              <div
+                key={box.title}
+                className="box"
+                style={{
+                  flex: 1,
+                  border: '1px solid #ccc',
+                  borderRadius: '4px',
+                  padding: '1rem',
+                  backgroundColor: '#fff',
+                  color: logoBlue,
+                }}
+              >
+                <h3>{box.title}</h3>
+                <ul>
+                  {box.items.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
           </div>
-          
-          <footer style={{ marginTop: '2rem', textAlign: 'center', color: '#fff', fontWeight: 'bold' }}>
+
+          <footer
+            style={{
+              marginTop: '2rem',
+              textAlign: 'center',
+              color: logoBlue,
+              fontWeight: 'bold',
+            }}
+          >
             <p>부장 : 류용헌</p>
             <p>차장 : 신지욱</p>
           </footer>
