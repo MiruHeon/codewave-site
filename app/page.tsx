@@ -2,7 +2,7 @@ import React from "react";
 
 const CodeWave: React.FC = () => {
   return (
-    <div style={{ background: "#fff", minHeight: "100vh" }}>
+    <div style={{ background: "#fff", minHeight: "100vh", color: "#000" }}>
       <div
         className="container"
         style={{
@@ -46,16 +46,16 @@ const CodeWave: React.FC = () => {
               }}
             >
               <li>
-                <a href="#">포트폴리오</a>
+                <a href="#portfolio">포트폴리오</a>
               </li>
               <li>
-                <a href="#">교육과정</a>
+                <a href="#curriculum">교육과정</a>
               </li>
               <li>
-                <a href="#">구성원</a>
+                <a href="#members">구성원</a>
               </li>
               <li>
-                <a href="#">소식</a>
+                <a href="#news">소식</a>
               </li>
             </ul>
           </nav>
@@ -79,127 +79,7 @@ const CodeWave: React.FC = () => {
           }}
         ></div>
 
-        {/* 콘텐츠 */}
-        <div
-          className="content"
-          style={{ display: "flex", gap: 20, padding: "20px 0" }}
-        >
-          {/* 공지사항 */}
-          <div
-            className="box"
-            style={{
-              flex: 1,
-              border: "1px solid #ccc",
-              borderRadius: 4,
-              overflow: "hidden",
-            }}
-          >
-            <h3
-              style={{
-                background: "navy",
-                color: "white",
-                margin: 0,
-                padding: 10,
-                fontSize: "1rem",
-              }}
-            >
-              공지사항
-            </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-              <li
-                style={{
-                  padding: "6px 0",
-                  fontSize: "0.9rem",
-                  borderBottom: "1px dotted #ddd",
-                }}
-              >
-                1대 회장 류용헌 당선
-              </li>
-              <li
-                style={{
-                  padding: "6px 0",
-                  fontSize: "0.9rem",
-                  borderBottom: "1px dotted #ddd",
-                }}
-              >
-                1대 차장 신지욱 당선
-              </li>
-              <li
-                style={{
-                  padding: "6px 0",
-                  fontSize: "0.9rem",
-                  borderBottom: "1px dotted #ddd",
-                }}
-              >
-                홍대부중 동아리 '코드웨이브' 신설
-              </li>
-            </ul>
-          </div>
-
-          {/* 뉴스 */}
-          <div
-            className="box"
-            style={{
-              flex: 1,
-              border: "1px solid #ccc",
-              borderRadius: 4,
-              overflow: "hidden",
-            }}
-          >
-            <h3
-              style={{
-                background: "navy",
-                color: "white",
-                margin: 0,
-                padding: 10,
-                fontSize: "1rem",
-              }}
-            >
-              News
-            </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-              <li
-                style={{
-                  padding: "6px 0",
-                  fontSize: "0.9rem",
-                  borderBottom: "1px dotted #ddd",
-                }}
-              >
-                11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내
-              </li>
-            </ul>
-          </div>
-
-          {/* 갤러리 */}
-          <div
-            className="box gallery"
-            style={{
-              flex: 1,
-              border: "1px solid #ccc",
-              borderRadius: 4,
-              overflow: "hidden",
-            }}
-          >
-            <h3
-              style={{
-                background: "navy",
-                color: "white",
-                margin: 0,
-                padding: 10,
-                fontSize: "1rem",
-              }}
-            >
-              갤러리
-            </h3>
-            <img
-              src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
-              alt="gallery1"
-              style={{ width: "100%", height: "auto", objectFit: "contain", marginBottom: 5 }}
-            />
-          </div>
-        </div>
-
-        {/* 포트폴리오 */}
+        {/* 공지사항 */}
         <div
           className="box"
           style={{
@@ -207,7 +87,43 @@ const CodeWave: React.FC = () => {
             border: "1px solid #ccc",
             borderRadius: 4,
             overflow: "hidden",
-            marginTop: 20,
+            marginBottom: 20,
+          }}
+        >
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+              fontSize: "1rem",
+            }}
+          >
+            공지사항
+          </h3>
+          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
+              1대 회장 류용헌 당선
+            </li>
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
+              1대 차장 신지욱 당선
+            </li>
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
+              홍대부중 동아리 '코드웨이브' 신설
+            </li>
+          </ul>
+        </div>
+
+        {/* 포트폴리오 */}
+        <div
+          id="portfolio"
+          className="box"
+          style={{
+            flex: 1,
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            overflow: "hidden",
+            marginBottom: 20,
           }}
         >
           <h3
@@ -243,13 +159,14 @@ const CodeWave: React.FC = () => {
 
         {/* 교육과정 */}
         <div
+          id="curriculum"
           className="box"
           style={{
             flex: 1,
             border: "1px solid #ccc",
             borderRadius: 4,
             overflow: "hidden",
-            marginTop: 20,
+            marginBottom: 20,
           }}
         >
           <h3
@@ -264,31 +181,13 @@ const CodeWave: React.FC = () => {
             교육과정
           </h3>
           <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li
-              style={{
-                padding: "6px 0",
-                fontSize: "0.9rem",
-                borderBottom: "1px dotted #ddd",
-              }}
-            >
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
               프로그래밍
             </li>
-            <li
-              style={{
-                padding: "6px 0",
-                fontSize: "0.9rem",
-                borderBottom: "1px dotted #ddd",
-              }}
-            >
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
               자료구조와 알고리즘
             </li>
-            <li
-              style={{
-                padding: "6px 0",
-                fontSize: "0.9rem",
-                borderBottom: "1px dotted #ddd",
-              }}
-            >
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
               AI
             </li>
           </ul>
@@ -296,13 +195,14 @@ const CodeWave: React.FC = () => {
 
         {/* 소식 */}
         <div
+          id="news"
           className="box"
           style={{
             flex: 1,
             border: "1px solid #ccc",
             borderRadius: 4,
             overflow: "hidden",
-            marginTop: 20,
+            marginBottom: 20,
           }}
         >
           <h3
@@ -317,16 +217,36 @@ const CodeWave: React.FC = () => {
             소식
           </h3>
           <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li
-              style={{
-                padding: "6px 0",
-                fontSize: "0.9rem",
-                borderBottom: "1px dotted #ddd",
-              }}
-            >
+            <li style={{ padding: "6px 0", fontSize: "0.9rem", borderBottom: "1px dotted #ddd" }}>
               10.17 동아리 부스 준비기간 안내
             </li>
           </ul>
+        </div>
+
+        {/* 구성원 */}
+        <div
+          id="members"
+          className="box"
+          style={{
+            flex: 1,
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            overflow: "hidden",
+            marginBottom: 20,
+          }}
+        >
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+              fontSize: "1rem",
+            }}
+          >
+            구성원
+          </h3>
+          <p style={{ padding: 10 }}>아직 구현되지 않았습니다.</p>
         </div>
 
         {/* Footer */}
@@ -354,3 +274,4 @@ const CodeWave: React.FC = () => {
 };
 
 export default CodeWave;
+
