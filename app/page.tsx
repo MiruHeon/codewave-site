@@ -107,19 +107,19 @@ const ClubPage: React.FC = () => {
           color: '#fff',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
+          justifyContent: 'center', // 세로 중앙
+          alignItems: 'center',     // 가로 중앙
           padding: '2rem',
           opacity: fadeIn ? 1 : 0,
           transition: 'opacity 1.2s ease-in-out',
-          textAlign: 'left',
+          textAlign: 'center',      // 텍스트 중앙
           fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
           boxSizing: 'border-box',
           overflowY: 'auto',
           scrollbarWidth: 'none',
           msOverflowStyle: 'none',
-        }}
-      >
+      }}
+    >
         <p>
           <img 
             src="/cw_img.png" 
