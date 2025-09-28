@@ -29,26 +29,7 @@ const CodeWave: React.FC = () => {
               <li><a href="#curriculum">교육과정</a></li>
               <li><a href="#members">구성원</a></li>
               <li><a href="#news">소식</a></li>
-              <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform?usp=dialog"
-                  target="_blank"
-                  rel="noreferrer"
-                  style={{
-                    textDecoration: "none",
-                    color: "white",
-                    background: "#ff5722",
-                    padding: "6px 12px",
-                    borderRadius: 4,
-                    fontWeight: "bold",
-                    transition: "0.3s",
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.background = "#e64a19")}
-                  onMouseLeave={(e) => (e.currentTarget.style.background = "#ff5722")}
-                >
-                  2기 지원하기
-                </a>
-              </li>
+              <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform" target="_blank">2기 지원</a></li>
             </ul>
           </nav>
         </header>
@@ -65,18 +46,6 @@ const CodeWave: React.FC = () => {
             overflow: "hidden",
           }}
         >
-          <h1
-            style={{
-              color: "white",
-              fontSize: "2rem",
-              fontWeight: "bold",
-              transform: fadeIn ? "translateY(0)" : "translateY(-50px)",
-              opacity: fadeIn ? 1 : 0,
-              transition: "all 1s ease",
-            }}
-          >
-            코드웨이브에 오신 것을 환영합니다!
-          </h1>
         </div>
 
         {/* 포트폴리오 */}
