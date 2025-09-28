@@ -325,6 +325,7 @@ const CodeWave: React.FC = () => {
           >
             <p>Hongik Middle School</p>
           </a>
+          <p>ⓒ 류용헌</p>
         </footer>
       </div>
     </div>
