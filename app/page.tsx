@@ -211,12 +211,14 @@ const ClubPage: React.FC = () => {
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'flex-end',
+            flexDirection: 'row', // 가로 정렬
+            justifyContent: 'center', // 가로 중앙
+            alignItems: 'center',     // 세로 중앙
             gap: '1.5rem',
             marginTop: '1rem',
-          }}
-        >
+            flexWrap: 'wrap', // 화면이 작으면 줄바꿈
+        }}
+      >
           <a
             href="/chaja-pdf.pdf"
             target="_blank"
