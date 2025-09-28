@@ -27,22 +27,43 @@ const CodeWave: React.FC = () => {
             justifyContent: "space-between",
             alignItems: "center",
             padding: 10,
-            borderBottom: "1px solid #ccc",
+            background: "#001f3f",
+            color: "white",
+            boxShadow: "0 4px 6px rgba(0,0,0,0.1)",
+            position: "sticky",
+            top: 0,
+            zIndex: 1000,
+            opacity: fadeIn ? 1 : 0,
+            transition: "opacity 1s ease",
           }}
         >
+          {/* 로고 */}
           <div style={{ display: "flex", alignItems: "center" }}>
             <img
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/cw_img.png?raw=true"
               alt="코드웨이브 로고"
-              style={{ width: 60, height: 60 }}
+              style={{
+                width: 60,
+                height: 60,
+                transition: "transform 0.3s",
+                cursor: "pointer",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "rotate(10deg) scale(1.1)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "rotate(0deg) scale(1)")
+              }
             />
             <div style={{ marginLeft: 10 }}>
               <h2 style={{ margin: 0 }}>코드웨이브</h2>
-              <p style={{ fontSize: "0.85rem", color: "#555", margin: 0 }}>
+              <p style={{ fontSize: "0.85rem", color: "#FFD700", margin: 0 }}>
                 Hongik Middle School Codewave
               </p>
             </div>
           </div>
+
+          {/* 메뉴 */}
           <nav>
             <ul
               style={{
@@ -55,28 +76,55 @@ const CodeWave: React.FC = () => {
                 fontSize: "0.9rem",
               }}
             >
-              <li>
-                <a href="#portfolio">포트폴리오</a>
-              </li>
-              <li>
-                <a href="#curriculum">교육과정</a>
-              </li>
-              <li>
-                <a href="#notice">공지사항</a>
-              </li>
-              <li>
-                <a href="#news">News</a>
-              </li>
-              <li>
-                <a href="#gallery">갤러리</a>
-              </li>
-              <li>
-                <a href="#members">구성원</a>
-              </li>
+              {[
+                "포트폴리오",
+                "교육과정",
+                "공지사항",
+                "News",
+                "갤러리",
+                "구성원",
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href={`#${item === "News" ? "news" : item.toLowerCase()}`}
+                    style={{
+                      position: "relative",
+                      transition: "color 0.3s",
+                      color: "white",
+                      textDecoration: "none",
+                    }}
+                    onMouseEnter={(e) =>
+                      (e.currentTarget.style.color = "#FFD700")
+                    }
+                    onMouseLeave={(e) =>
+                      (e.currentTarget.style.color = "white")
+                    }
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
               <li>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
                   target="_blank"
+                  style={{
+                    color: "white",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                    border: "1px solid #FFD700",
+                    padding: "5px 10px",
+                    borderRadius: 4,
+                    transition: "all 0.3s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "#FFD700";
+                    e.currentTarget.style.color = "#001f3f";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "white";
+                  }}
                 >
                   2기 지원
                 </a>
@@ -287,7 +335,15 @@ const CodeWave: React.FC = () => {
           >
             구성원
           </h3>
-          <p style={{ padding: 10 }}>아직 구현되지 않았습니다.</p>
+          <div style={{ padding: 10 }}>
+            <p>
+              <strong>강태연</strong> - 물리지구과학부 교원
+            </p>
+            <p>전공분야: 물리</p>
+            <p>연구실: 창조관 5502호</p>
+            <p>Tel. 051-606-2391</p>
+            <p>e-mail: teyoun@ksa.kaist.ac.kr</p>
+          </div>
         </section>
 
         {/* Footer */}
