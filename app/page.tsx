@@ -57,7 +57,7 @@ const CodeWave: React.FC = () => {
             />
             <div style={{ marginLeft: 10 }}>
               <h2 style={{ margin: 0 }}>코드웨이브</h2>
-              <p style={{ fontSize: "0.85rem", color: "#FFD700", margin: 0 }}>
+              <p style={{ fontSize: "0.85rem", color: "white", margin: 0 }}>
                 Hongik Middle School Codewave
               </p>
             </div>
@@ -88,13 +88,12 @@ const CodeWave: React.FC = () => {
                   <a
                     href={`#${item === "News" ? "news" : item.toLowerCase()}`}
                     style={{
-                      position: "relative",
-                      transition: "color 0.3s",
                       color: "white",
                       textDecoration: "none",
+                      transition: "color 0.3s",
                     }}
                     onMouseEnter={(e) =>
-                      (e.currentTarget.style.color = "#FFD700")
+                      (e.currentTarget.style.color = "#ccc")
                     }
                     onMouseLeave={(e) =>
                       (e.currentTarget.style.color = "white")
@@ -104,31 +103,6 @@ const CodeWave: React.FC = () => {
                   </a>
                 </li>
               ))}
-              <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
-                  target="_blank"
-                  style={{
-                    color: "white",
-                    textDecoration: "none",
-                    fontWeight: "bold",
-                    border: "1px solid #FFD700",
-                    padding: "5px 10px",
-                    borderRadius: 4,
-                    transition: "all 0.3s",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.background = "#FFD700";
-                    e.currentTarget.style.color = "#001f3f";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.background = "transparent";
-                    e.currentTarget.style.color = "white";
-                  }}
-                >
-                  2기 지원
-                </a>
-              </li>
             </ul>
           </nav>
         </header>
@@ -337,12 +311,12 @@ const CodeWave: React.FC = () => {
           </h3>
           <div style={{ padding: 10 }}>
             <p>
-              <strong>강태연</strong> - 물리지구과학부 교원
+              <strong>류용헌</strong> - 코드웨이브 부장
             </p>
-            <p>전공분야: 물리</p>
-            <p>연구실: 창조관 5502호</p>
-            <p>Tel. 051-606-2391</p>
-            <p>e-mail: teyoun@ksa.kaist.ac.kr</p>
+            <p>전공분야: AI</p>
+            <p>학년/반: 2학년 5반</p>
+            <p>Tel. 미공개</p>
+            <p>e-mail: imjamminii@gmail.com</p>
           </div>
         </section>
 
@@ -371,3 +345,4 @@ const CodeWave: React.FC = () => {
 };
 
 export default CodeWave;
+
