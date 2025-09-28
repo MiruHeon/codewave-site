@@ -342,6 +342,32 @@ const ClubPage: React.FC = () => {
             </div>
           </div>
 
+          <div class="banner"></div>
+
+          {/* 공지사항 / News */}
+          <div className="content" style={{ display: 'flex', gap: '1rem', marginTop: '2rem' }}>
+            <div className="box" style={{ flex: 1, border: '1px solid #ccc', borderRadius: '4px', padding: '1rem', backgroundColor: '#fff', color: logoBlue }}>
+              <h3>공지사항</h3>
+              <ul>
+                <li>1대 회장 류용헌 당선</li>
+                <li>1대 차장 신지욱 당선</li>
+                <li>홍대부중 동아리 '코드웨이브' 신설</li>
+              </ul>
+            </div>
+          
+            <div className="box" style={{ flex: 1, border: '1px solid #ccc', borderRadius: '4px', padding: '1rem', backgroundColor: '#fff', color: logoBlue }}>
+              <h3>News</h3>
+              <ul>
+                <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
+              </ul>
+            </div>
+          </div>
+          
+          <footer style={{ marginTop: '2rem', textAlign: 'center', color: '#fff', fontWeight: 'bold' }}>
+            <p>부장 : 류용헌</p>
+            <p>차장 : 신지욱</p>
+          </footer>
+
           {/* 마무리 문구 */}
           <h1
             style={{
