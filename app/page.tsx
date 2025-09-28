@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
 
 const CodeWave: React.FC = () => {
   const [fadeIn, setFadeIn] = useState(false);
@@ -11,19 +10,10 @@ const CodeWave: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  // 카드 공통 스타일
-  const cardStyle: React.CSSProperties = {
-    border: "1px solid #ddd",
-    borderRadius: 8,
-    padding: 15,
-    background: "#fff",
-    boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
-  };
-
   return (
     <div
       style={{
-        background: "#f4f6fa",
+        background: "#fff",
         minHeight: "100vh",
         color: "#000",
         fontFamily: "'Noto Sans KR', sans-serif",
@@ -38,7 +28,6 @@ const CodeWave: React.FC = () => {
             alignItems: "center",
             padding: 10,
             borderBottom: "1px solid #ccc",
-            background: "#fff",
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -66,12 +55,24 @@ const CodeWave: React.FC = () => {
                 fontSize: "0.9rem",
               }}
             >
-              <li><a href="#portfolio">포트폴리오</a></li>
-              <li><a href="#curriculum">교육과정</a></li>
-              <li><a href="#notice">공지사항</a></li>
-              <li><a href="#news">News</a></li>
-              <li><a href="#gallery">갤러리</a></li>
-              <li><a href="#members">구성원</a></li>
+              <li>
+                <a href="#portfolio">포트폴리오</a>
+              </li>
+              <li>
+                <a href="#curriculum">교육과정</a>
+              </li>
+              <li>
+                <a href="#notice">공지사항</a>
+              </li>
+              <li>
+                <a href="#news">News</a>
+              </li>
+              <li>
+                <a href="#gallery">갤러리</a>
+              </li>
+              <li>
+                <a href="#members">구성원</a>
+              </li>
               <li>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
@@ -84,15 +85,41 @@ const CodeWave: React.FC = () => {
           </nav>
         </header>
 
+        {/* 배너 */}
+        <div
+          style={{
+            width: "100%",
+            height: 250,
+            background:
+              "url('https://github.com/MiruHeon/Normal-Project/blob/main/%EC%84%9C%EC%9A%B8%EC%9D%98%20%EB%8B%AC.png?raw=true') no-repeat center/cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 10,
+          }}
+        ></div>
+
         {/* 포트폴리오 */}
-        <motion.section
+        <section
           id="portfolio"
-          style={cardStyle}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: fadeIn ? 1 : 0, x: fadeIn ? 0 : -50 }}
-          transition={{ duration: 0.8 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+            transform: fadeIn ? "translateX(0)" : "translateX(-50px)",
+            opacity: fadeIn ? 1 : 0,
+            transition: "all 1s ease 0.3s",
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             포트폴리오
           </h3>
           <a
@@ -100,42 +127,78 @@ const CodeWave: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            <motion.img
+            <img
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
               alt="포트폴리오"
-              style={{ width: "40%", marginTop: 10, borderRadius: 6, border: "1px solid #ccc" }}
-              whileHover={{ scale: 1.05 }}
+              style={{
+                width: "40%",
+                marginTop: 10,
+                border: "1px solid #ccc",
+                borderRadius: 4,
+                transition: "transform 0.3s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "scale(1.05)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "scale(1)")
+              }
             />
           </a>
-        </motion.section>
+        </section>
 
         {/* 교육과정 */}
-        <motion.section
+        <section
           id="curriculum"
-          style={{ ...cardStyle, marginTop: 20 }}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: fadeIn ? 1 : 0, x: fadeIn ? 0 : 50 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+            transform: fadeIn ? "translateX(0)" : "translateX(50px)",
+            opacity: fadeIn ? 1 : 0,
+            transition: "all 1s ease 0.5s",
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             교육과정
           </h3>
           <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>프로그래밍</li>
-            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>자료구조와 알고리즘</li>
+            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
+              프로그래밍
+            </li>
+            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
+              자료구조와 알고리즘
+            </li>
             <li style={{ padding: 6 }}>AI</li>
           </ul>
-        </motion.section>
+        </section>
 
         {/* 공지사항 */}
-        <motion.section
+        <section
           id="notice"
-          style={{ ...cardStyle, marginTop: 20 }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: fadeIn ? 1 : 0, y: fadeIn ? 0 : 40 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             공지사항
           </h3>
           <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
@@ -143,63 +206,89 @@ const CodeWave: React.FC = () => {
             <li>1대 차장 신지욱 당선</li>
             <li>홍대부중 동아리 '코드웨이브' 신설</li>
           </ul>
-        </motion.section>
+        </section>
 
         {/* News */}
-        <motion.section
+        <section
           id="news"
-          style={{ ...cardStyle, marginTop: 20 }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: fadeIn ? 1 : 0, y: fadeIn ? 0 : 40 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             News
           </h3>
           <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
             <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
           </ul>
-        </motion.section>
+        </section>
 
         {/* 갤러리 */}
-        <motion.section
+        <section
           id="gallery"
-          style={{ ...cardStyle, marginTop: 20 }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: fadeIn ? 1 : 0, y: fadeIn ? 0 : 40 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             갤러리
           </h3>
-          <motion.img
+          <img
             src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
             alt="gallery1"
-            style={{ width: "100%", maxWidth: 400, marginTop: 10, borderRadius: 6, cursor: "pointer" }}
-            whileHover={{ scale: 1.03 }}
+            style={{
+              width: "100%",
+              maxWidth: 400,
+              marginTop: 10,
+              borderRadius: 4,
+              cursor: "pointer",
+            }}
             onClick={(e) => window.open(e.currentTarget.src, "_blank")}
           />
-        </motion.section>
+        </section>
 
         {/* 구성원 */}
-        <motion.section
+        <section
           id="members"
-          style={{ ...cardStyle, marginTop: 20 }}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: fadeIn ? 1 : 0, y: fadeIn ? 0 : 40 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          style={{
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
+            padding: 10,
+          }}
         >
-          <h3 style={{ background: "navy", color: "white", margin: 0, padding: 10, borderRadius: 4 }}>
+          <h3
+            style={{
+              background: "navy",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
             구성원
           </h3>
-          <div style={{ marginTop: 10, padding: 10, border: "1px solid #ddd", borderRadius: 6, background: "#f9f9f9" }}>
-            <p><strong>류용헌</strong> - 코드웨이브 부장</p>
-            <p><strong>전공분야:</strong> AI</p>
-            <p><strong>학년/반:</strong> 2학년 5반</p>
-            <p><strong>Tel.:</strong> 미제공</p>
-            <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
-          </div>
-        </motion.section>
+          <p style={{ padding: 10 }}>아직 구현되지 않았습니다.</p>
+        </section>
 
         {/* Footer */}
         <footer
@@ -219,7 +308,6 @@ const CodeWave: React.FC = () => {
           >
             <p>Hongik Middle School</p>
           </a>
-          <p>ⓒ 류용헌</p>
         </footer>
       </div>
     </div>
