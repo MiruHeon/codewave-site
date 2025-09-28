@@ -275,5 +275,3 @@ const CodeWave: React.FC = () => {
 };
 
 export default CodeWave;
-
-
