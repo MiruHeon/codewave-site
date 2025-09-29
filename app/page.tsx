@@ -82,7 +82,7 @@ const CodeWave: React.FC = () => {
         <div
           style={{
             width: "100%",
-            aspectRatio: "16/8", // 반응형 비율
+            aspectRatio: "16/7", // 반응형 비율
             background:
               "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
             display: "flex",
