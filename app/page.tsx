@@ -37,7 +37,10 @@ const CodeWave: React.FC = () => {
               style={{ width: 60, height: 60 }}
             />
             <div style={{ marginLeft: 10 }}>
-              <h2 style={{ margin: 0 }}>코드웨이브</h2>
+              <h2 style={{ margin: 0 }}>
+                <strong>코드웨이브</strong>
+              </h2>
+
               <p style={{ fontSize: "0.85rem", color: "#555", margin: 0 }}>
                 Hongik Middle School Codewave
               </p>
