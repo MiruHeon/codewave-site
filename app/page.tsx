@@ -17,9 +17,10 @@ const CodeWave: React.FC = () => {
         minHeight: "100vh",
         color: "#000",
         fontFamily: "'Noto Sans KR', sans-serif",
+        overflowX: "hidden", // 모바일 가로 스크롤 방지
       }}
     >
-      <div style={{ maxWidth: 950, margin: "0 auto", padding: "0 20px" }}>
+      <div style={{ maxWidth: 950, margin: "0 auto", padding: "0 16px" }}>
         {/* 헤더 */}
         <header
           style={{
@@ -28,6 +29,7 @@ const CodeWave: React.FC = () => {
             alignItems: "center",
             padding: 10,
             borderBottom: "1px solid #ccc",
+            flexWrap: "wrap", // 모바일에서 줄바꿈 허용
           }}
         >
           <div style={{ display: "flex", alignItems: "center" }}>
@@ -40,7 +42,6 @@ const CodeWave: React.FC = () => {
               <h2 style={{ margin: 0 }}>
                 <strong>코드웨이브</strong>
               </h2>
-
               <p style={{ fontSize: "0.85rem", color: "#555", margin: 0 }}>
                 Hongik Middle School Codewave
               </p>
@@ -56,26 +57,15 @@ const CodeWave: React.FC = () => {
                 padding: 0,
                 alignItems: "center",
                 fontSize: "0.9rem",
+                flexWrap: "wrap", // 모바일 대응
               }}
             >
-              <li>
-                <a href="#portfolio">포트폴리오</a>
-              </li>
-              <li>
-                <a href="#curriculum">교육과정</a>
-              </li>
-              <li>
-                <a href="#notice">공지사항</a>
-              </li>
-              <li>
-                <a href="#news">News</a>
-              </li>
-              <li>
-                <a href="#gallery">갤러리</a>
-              </li>
-              <li>
-                <a href="#members">구성원</a>
-              </li>
+              <li><a href="#portfolio">포트폴리오</a></li>
+              <li><a href="#curriculum">교육과정</a></li>
+              <li><a href="#notice">공지사항</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#gallery">갤러리</a></li>
+              <li><a href="#members">구성원</a></li>
               <li>
                 <a
                   href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
@@ -90,19 +80,17 @@ const CodeWave: React.FC = () => {
 
         {/* 배너 */}
         <div
-        style={{
-          width: "100%",
-          height: 380, // 원하는 배너 높이
-          background:
-            "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginTop: 10,
-        }}
-      ></div>
-
-
+          style={{
+            width: "100%",
+            aspectRatio: "16/6", // 반응형 비율
+            background:
+              "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            marginTop: 10,
+          }}
+        ></div>
 
         {/* 포트폴리오 */}
         <section
@@ -136,7 +124,8 @@ const CodeWave: React.FC = () => {
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
               alt="포트폴리오"
               style={{
-                width: "40%",
+                width: "100%", // 반응형
+                maxWidth: 400,
                 marginTop: 10,
                 border: "1px solid #ccc",
                 borderRadius: 4,
@@ -272,45 +261,42 @@ const CodeWave: React.FC = () => {
           />
         </section>
 
-      {/* 구성원 */}
-      <section
-        id="members"
-        style={{
-          border: "1px solid #ccc",
-          borderRadius: 4,
-          marginTop: 20,
-          padding: 10,
-        }}
-      >
-        <h3
+        {/* 구성원 */}
+        <section
+          id="members"
           style={{
-            background: "#2d2a8f",
-            color: "white",
-            margin: 0,
+            border: "1px solid #ccc",
+            borderRadius: 4,
+            marginTop: 20,
             padding: 10,
           }}
         >
-          구성원
-        </h3>
-      
-        {/* 멤버 카드 */}
-        <div
-          style={{
-            marginTop: 10,
-            padding: 10,
-            border: "1px solid #ddd",
-            borderRadius: 6,
-            background: "#f9f9f9",
-          }}
-        >
-          <p><strong>류용헌</strong> - 코드웨이브 부장</p>
-          <p><strong>전공분야:</strong> AI</p>
-          <p><strong>학년/반:</strong> 2학년 5반</p>
-          <p><strong>Tel.:</strong> 미제공</p>
-          <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
-        </div>
-      </section>
-
+          <h3
+            style={{
+              background: "#2d2a8f",
+              color: "white",
+              margin: 0,
+              padding: 10,
+            }}
+          >
+            구성원
+          </h3>
+          <div
+            style={{
+              marginTop: 10,
+              padding: 10,
+              border: "1px solid #ddd",
+              borderRadius: 6,
+              background: "#f9f9f9",
+            }}
+          >
+            <p><strong>류용헌</strong> - 코드웨이브 부장</p>
+            <p><strong>전공분야:</strong> AI</p>
+            <p><strong>학년/반:</strong> 2학년 5반</p>
+            <p><strong>Tel.:</strong> 미제공</p>
+            <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
+          </div>
+        </section>
 
         {/* Footer */}
         <footer
