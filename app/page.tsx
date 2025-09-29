@@ -90,17 +90,18 @@ const CodeWave: React.FC = () => {
 
         {/* 배너 */}
         <div
-          style={{
-            width: "100%",
-            height: 250,
-            background:
-              "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 10,
-          }}
-        ></div>
+        style={{
+          width: "100%",
+          height: 250,
+          background:
+            "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/contain",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 10,
+        }}
+      ></div>
+
 
         {/* 포트폴리오 */}
         <section
