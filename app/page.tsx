@@ -94,7 +94,7 @@ const CodeWave: React.FC = () => {
             width: "100%",
             height: 250,
             background:
-              "url('https://github.com/MiruHeon/Normal-Project/blob/main/%EC%84%9C%EC%9A%B8%EC%9D%98%20%EB%8B%AC.png?raw=true') no-repeat center/cover",
+              "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
@@ -117,7 +117,7 @@ const CodeWave: React.FC = () => {
         >
           <h3
             style={{
-              background: "navy",
+              background: "#2d2a8f",
               color: "white",
               margin: 0,
               padding: 10,
@@ -165,7 +165,7 @@ const CodeWave: React.FC = () => {
         >
           <h3
             style={{
-              background: "navy",
+              background: "#2d2a8f",
               color: "white",
               margin: 0,
               padding: 10,
@@ -196,7 +196,7 @@ const CodeWave: React.FC = () => {
         >
           <h3
             style={{
-              background: "navy",
+              background: "#2d2a8f",
               color: "white",
               margin: 0,
               padding: 10,
@@ -223,7 +223,7 @@ const CodeWave: React.FC = () => {
         >
           <h3
             style={{
-              background: "navy",
+              background: "#2d2a8f",
               color: "white",
               margin: 0,
               padding: 10,
@@ -248,7 +248,7 @@ const CodeWave: React.FC = () => {
         >
           <h3
             style={{
-              background: "navy",
+              background: "#2d2a8f",
               color: "white",
               margin: 0,
               padding: 10,
@@ -282,7 +282,7 @@ const CodeWave: React.FC = () => {
       >
         <h3
           style={{
-            background: "navy",
+            background: "#2d2a8f",
             color: "white",
             margin: 0,
             padding: 10,
