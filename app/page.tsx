@@ -92,7 +92,7 @@ const CodeWave: React.FC = () => {
         <div
         style={{
           width: "100%",
-          height: 250, // 원하는 배너 높이
+          height: 450, // 원하는 배너 높이
           background:
             "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
           display: "flex",
