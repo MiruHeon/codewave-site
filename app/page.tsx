@@ -115,56 +115,58 @@ const CodeWave: React.FC = () => {
           >
             포트폴리오
           </h3>
-          <a
-            href="/chaja-pdf.pdf"
-            target="_blank"
-            rel="noreferrer"
+        
+          {/* 이미지들을 감싸는 flex 컨테이너 */}
+          <div
+            style={{
+              display: "flex",
+              gap: 20, // 이미지 사이 간격
+              flexWrap: "wrap", // 화면이 좁으면 자동 줄바꿈
+              marginTop: 10,
+            }}
           >
-            <img
-              src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
-              alt="포트폴리오"
-              style={{
-                width: "100%", // 반응형
-                maxWidth: 400,
-                marginTop: 10,
-                border: "1px solid #ccc",
-                borderRadius: 4,
-                transition: "transform 0.3s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            />
-          </a>
-
-          <a
-            href="/chatgppti.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
-              alt="포트폴리오"
-              style={{
-                width: "100%", // 반응형
-                maxWidth: 400,
-                marginTop: 10,
-                border: "1px solid #ccc",
-                borderRadius: 4,
-                transition: "transform 0.3s",
-              }}
-              onMouseEnter={(e) =>
-                (e.currentTarget.style.transform = "scale(1.05)")
-              }
-              onMouseLeave={(e) =>
-                (e.currentTarget.style.transform = "scale(1)")
-              }
-            />
-          </a>
+            <a href="/chaja-pdf.pdf" target="_blank" rel="noreferrer">
+              <img
+                src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
+                alt="포트폴리오"
+                style={{
+                  width: "100%",
+                  maxWidth: 300,
+                  border: "1px solid #ccc",
+                  borderRadius: 4,
+                  transition: "transform 0.3s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "scale(1.05)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "scale(1)")
+                }
+              />
+            </a>
+        
+            <a href="/chatgppti.pdf" target="_blank" rel="noreferrer">
+              <img
+                src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
+                alt="포트폴리오"
+                style={{
+                  width: "100%",
+                  maxWidth: 300,
+                  border: "1px solid #ccc",
+                  borderRadius: 4,
+                  transition: "transform 0.3s",
+                }}
+                onMouseEnter={(e) =>
+                  (e.currentTarget.style.transform = "scale(1.05)")
+                }
+                onMouseLeave={(e) =>
+                  (e.currentTarget.style.transform = "scale(1)")
+                }
+              />
+            </a>
+          </div>
         </section>
+
 
         {/* 교육과정 */}
         <section
