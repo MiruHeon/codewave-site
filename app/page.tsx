@@ -116,12 +116,37 @@ const CodeWave: React.FC = () => {
             포트폴리오
           </h3>
           <a
-            href="https://drive.google.com/file/d/161RUJxVb9Nn_o8rwBrrDoXiXp283WoFc/view?usp=sharing"
+            href="/chaja-pdf.pdf"
             target="_blank"
             rel="noreferrer"
           >
             <img
               src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
+              alt="포트폴리오"
+              style={{
+                width: "100%", // 반응형
+                maxWidth: 400,
+                marginTop: 10,
+                border: "1px solid #ccc",
+                borderRadius: 4,
+                transition: "transform 0.3s",
+              }}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.transform = "scale(1.05)")
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.transform = "scale(1)")
+              }
+            />
+          </a>
+
+          <a
+            href="/chatgppti.pdf"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
               alt="포트폴리오"
               style={{
                 width: "100%", // 반응형
