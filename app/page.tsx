@@ -82,7 +82,7 @@ const CodeWave: React.FC = () => {
         <div
           style={{
             width: "100%",
-            aspectRatio: "16/6.5", // 반응형 비율
+            aspectRatio: "16/6.5",
             background:
               "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
             display: "flex",
@@ -92,238 +92,246 @@ const CodeWave: React.FC = () => {
           }}
         ></div>
 
-        {/* 포트폴리오 */}
-        <section
-          id="portfolio"
+        {/* === 2열 레이아웃 시작 === */}
+        <style>
+          {`
+            @media (max-width: 768px) {
+              .grid-2col {
+                grid-template-columns: 1fr !important;
+              }
+            }
+          `}
+        </style>
+
+        {/* 포트폴리오 + 교육과정 */}
+        <div
+          className="grid-2col"
           style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 20,
             marginTop: 20,
-            padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(-50px)",
-            opacity: fadeIn ? 1 : 0,
-            transition: "all 1s ease 0.3s",
           }}
         >
-          <h3
+          {/* 포트폴리오 */}
+          <section
+            id="portfolio"
             style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
-          >
-            포트폴리오
-          </h3>
-        
-          {/* 이미지들을 감싸는 flex 컨테이너 */}
-          <div
-            style={{
-              display: "flex",
-              gap: 20, // 이미지 사이 간격
-              flexWrap: "wrap", // 화면이 좁으면 자동 줄바꿈
-              marginTop: 10,
-            }}
-          >
-            <a href="/chaja-pdf.pdf" target="_blank" rel="noreferrer">
-              <img
-                src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
-                alt="포트폴리오"
-                style={{
-                  width: "100%",
-                  maxWidth: 300,
-                  border: "1px solid #ccc",
-                  borderRadius: 4,
-                  transition: "transform 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.05)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
-              />
-            </a>
-        
-            <a href="/chatgppti.pdf" target="_blank" rel="noreferrer">
-              <img
-                src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
-                alt="포트폴리오"
-                style={{
-                  width: "100%",
-                  maxWidth: 300,
-                  border: "1px solid #ccc",
-                  borderRadius: 4,
-                  transition: "transform 0.3s",
-                }}
-                onMouseEnter={(e) =>
-                  (e.currentTarget.style.transform = "scale(1.05)")
-                }
-                onMouseLeave={(e) =>
-                  (e.currentTarget.style.transform = "scale(1)")
-                }
-              />
-            </a>
-          </div>
-        </section>
-
-
-        {/* 교육과정 */}
-        <section
-          id="curriculum"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
-            marginTop: 20,
-            padding: 10,
-            transform: fadeIn ? "translateX(0)" : "translateX(50px)",
-            opacity: fadeIn ? 1 : 0,
-            transition: "all 1s ease 0.5s",
-          }}
-        >
-          <h3
-            style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
-          >
-            교육과정
-          </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
-              프로그래밍
-            </li>
-            <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>
-              자료구조와 알고리즘
-            </li>
-            <li style={{ padding: 6 }}>AI</li>
-          </ul>
-        </section>
-
-        {/* 공지사항 */}
-        <section
-          id="notice"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
-            marginTop: 20,
-            padding: 10,
-          }}
-        >
-          <h3
-            style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
-          >
-            공지사항
-          </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li>1대 회장 류용헌 당선</li>
-            <li>1대 차장 신지욱 당선</li>
-            <li>홍대부중 동아리 '코드웨이브' 신설</li>
-          </ul>
-        </section>
-
-        {/* News */}
-        <section
-          id="news"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
-            marginTop: 20,
-            padding: 10,
-          }}
-        >
-          <h3
-            style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
-          >
-            News
-          </h3>
-          <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-            <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
-          </ul>
-        </section>
-
-        {/* 갤러리 */}
-        <section
-          id="gallery"
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
-            marginTop: 20,
-            padding: 10,
-          }}
-        >
-          <h3
-            style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
-          >
-            갤러리
-          </h3>
-          <img
-            src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
-            alt="gallery1"
-            style={{
-              width: "100%",
-              maxWidth: 400,
-              marginTop: 10,
+              border: "1px solid #ccc",
               borderRadius: 4,
-              cursor: "pointer",
+              padding: 10,
+              transform: fadeIn ? "translateX(0)" : "translateX(-50px)",
+              opacity: fadeIn ? 1 : 0,
+              transition: "all 1s ease 0.3s",
             }}
-            onClick={(e) => window.open(e.currentTarget.src, "_blank")}
-          />
-        </section>
+          >
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              포트폴리오
+            </h3>
+            <div
+              style={{
+                display: "flex",
+                gap: 20,
+                flexWrap: "wrap",
+                marginTop: 10,
+              }}
+            >
+              <a href="/chaja-pdf.pdf" target="_blank" rel="noreferrer">
+                <img
+                  src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
+                  alt="포트폴리오"
+                  style={{
+                    width: "100%",
+                    maxWidth: 300,
+                    border: "1px solid #ccc",
+                    borderRadius: 4,
+                    transition: "transform 0.3s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.transform = "scale(1.05)")
+                  }
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")}
+                />
+              </a>
+              <a href="/chatgppti.pdf" target="_blank" rel="noreferrer">
+                <img
+                  src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
+                  alt="포트폴리오"
+                  style={{
+                    width: "100%",
+                    maxWidth: 300,
+                    border: "1px solid #ccc",
+                    borderRadius: 4,
+                    transition: "transform 0.3s",
+                  }}
+                  onMouseEnter={(e) =>
+                    (e.currentTarget.style.transform = "scale(1.05)")}
+                  onMouseLeave={(e) =>
+                    (e.currentTarget.style.transform = "scale(1)")}
+                />
+              </a>
+            </div>
+          </section>
 
-        {/* 구성원 */}
-        <section
-          id="members"
+          {/* 교육과정 */}
+          <section
+            id="curriculum"
+            style={{
+              border: "1px solid #ccc",
+              borderRadius: 4,
+              padding: 10,
+              transform: fadeIn ? "translateX(0)" : "translateX(50px)",
+              opacity: fadeIn ? 1 : 0,
+              transition: "all 1s ease 0.5s",
+            }}
+          >
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              교육과정
+            </h3>
+            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+              <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>프로그래밍</li>
+              <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>자료구조와 알고리즘</li>
+              <li style={{ padding: 6 }}>AI</li>
+            </ul>
+          </section>
+        </div>
+
+        {/* 공지사항 + News */}
+        <div
+          className="grid-2col"
           style={{
-            border: "1px solid #ccc",
-            borderRadius: 4,
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 20,
             marginTop: 20,
-            padding: 10,
           }}
         >
-          <h3
-            style={{
-              background: "#2d2a8f",
-              color: "white",
-              margin: 0,
-              padding: 10,
-            }}
+          <section
+            id="notice"
+            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
           >
-            구성원
-          </h3>
-          <div
-            style={{
-              marginTop: 10,
-              padding: 10,
-              border: "1px solid #ddd",
-              borderRadius: 6,
-              background: "#f9f9f9",
-            }}
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              공지사항
+            </h3>
+            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+              <li>1대 회장 류용헌 당선</li>
+              <li>1대 차장 신지욱 당선</li>
+              <li>홍대부중 동아리 '코드웨이브' 신설</li>
+            </ul>
+          </section>
+
+          <section
+            id="news"
+            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
           >
-            <p><strong>류용헌</strong> - 코드웨이브 부장</p>
-            <p><strong>전공분야:</strong> AI</p>
-            <p><strong>학년/반:</strong> 2학년 5반</p>
-            <p><strong>Tel.:</strong> 미제공</p>
-            <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
-          </div>
-        </section>
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              News
+            </h3>
+            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
+              <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
+            </ul>
+          </section>
+        </div>
+
+        {/* 갤러리 + 구성원 */}
+        <div
+          className="grid-2col"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
+            gap: 20,
+            marginTop: 20,
+          }}
+        >
+          <section
+            id="gallery"
+            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
+          >
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              갤러리
+            </h3>
+            <img
+              src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
+              alt="gallery1"
+              style={{
+                width: "100%",
+                maxWidth: 400,
+                marginTop: 10,
+                borderRadius: 4,
+                cursor: "pointer",
+              }}
+              onClick={(e) => window.open(e.currentTarget.src, "_blank")}
+            />
+          </section>
+
+          <section
+            id="members"
+            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
+          >
+            <h3
+              style={{
+                background: "#2d2a8f",
+                color: "white",
+                margin: 0,
+                padding: 10,
+              }}
+            >
+              구성원
+            </h3>
+            <div
+              style={{
+                marginTop: 10,
+                padding: 10,
+                border: "1px solid #ddd",
+                borderRadius: 6,
+                background: "#f9f9f9",
+              }}
+            >
+              <p><strong>류용헌</strong> - 코드웨이브 부장</p>
+              <p><strong>전공분야:</strong> AI</p>
+              <p><strong>학년/반:</strong> 2학년 5반</p>
+              <p><strong>Tel.:</strong> 미제공</p>
+              <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
+            </div>
+          </section>
+        </div>
+        {/* === 2열 레이아웃 끝 === */}
 
         {/* Footer */}
         <footer
