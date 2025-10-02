@@ -92,6 +92,20 @@ const CodeWave: React.FC = () => {
           }}
         ></div>
 
+        <h1
+          style={{
+            text-align: center,
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
+            marginTop: '2rem',
+          }}
+        >
+          ACHIEVE INNOVATION
+        </h1>
+
         {/* === 2열 레이아웃 시작 === */}
         <style>
           {`
