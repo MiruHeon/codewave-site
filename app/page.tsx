@@ -94,7 +94,7 @@ const CodeWave: React.FC = () => {
 
         <h1
           style={{
-            text-align: center,
+            textAlign: "center",
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
             fontWeight: 900,
