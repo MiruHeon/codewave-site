@@ -123,8 +123,7 @@ const ClubPage: React.FC = () => {
 
         <div
           style={{
-            width: "100%",
-            aspectRatio: "16/6.5",
+            width: "50%",
             background:
               "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
             display: "flex",
