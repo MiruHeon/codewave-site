@@ -123,16 +123,18 @@ const ClubPage: React.FC = () => {
 
         <div
         style={{
-          width: "100%",
-          height: "200px", // 높이 지정 필수!
+          width: "50%",
+          height: "250px", // 👈 고정된 크기
           background:
             "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           marginTop: 10,
+          borderRadius: 12, // 보기 좋게 모서리 둥글게
         }}
       ></div>
+
 
 
         <p>
