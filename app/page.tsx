@@ -283,7 +283,6 @@ const ClubPage: React.FC = () => {
               프로그래밍 관련 문제를 풀기 위한 기초적인 지식인 자료구조와 알고리즘을 배움으로써 문제 해결 능력을 향상시키고, 논리적 사고력을 기른다.
             </p>
           </div>
-        </div>
 
           <div style={{
             backgroundColor: '#fff',
