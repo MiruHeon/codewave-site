@@ -122,16 +122,18 @@ const ClubPage: React.FC = () => {
       >
 
         <div
-          style={{
-            width: "50%",
-            background:
-              "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 10,
-          }}
-        ></div>
+        style={{
+          width: "50%",
+          height: "100%", // 높이 지정 필수!
+          background:
+            "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          marginTop: 10,
+        }}
+      ></div>
+
 
         <p>
           <img 
