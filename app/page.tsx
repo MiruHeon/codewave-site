@@ -144,9 +144,9 @@ const ClubPage: React.FC = () => {
         </h1>
 
         <p style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
-          코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다.
+          코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다
           <br />
-          매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장해요.
+          매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장합니다
         </p>
 
         <p
@@ -259,7 +259,7 @@ const ClubPage: React.FC = () => {
           >
             <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>프로그래밍</h3>
             <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-              IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
+              IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달한다.
             </p>
           </div>
 
@@ -278,9 +278,31 @@ const ClubPage: React.FC = () => {
               (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
             }}
           >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>자료구조와 알고리즘</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              프로그래밍 관련 문제를 풀기 위한 기초적인 지식인 자료구조와 알고리즘을 배움으로써 문제 해결 능력을 향상시키고, 논리적 사고력을 기른다.
+            </p>
+          </div>
+        </div>
+
+          <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
             <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>AI</h3>
             <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-              프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
+              프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달한다.
             </p>
           </div>
         </div>
