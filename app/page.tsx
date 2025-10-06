@@ -107,12 +107,12 @@ const ClubPage: React.FC = () => {
           color: '#fff',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'flex-start',
+          justifyContent: 'center',
+          alignItems: 'center',
           padding: '2rem',
           opacity: fadeIn ? 1 : 0,
           transition: 'opacity 1.2s ease-in-out',
-          textAlign: 'left',
+          textAlign: 'center',
           fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
           boxSizing: 'border-box',
           overflowY: 'auto',
@@ -120,6 +120,7 @@ const ClubPage: React.FC = () => {
           msOverflowStyle: 'none',
         }}
       >
+
         <p>
           <img 
             src="/cw_img.png" 
