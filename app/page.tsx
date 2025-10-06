@@ -123,8 +123,8 @@ const ClubPage: React.FC = () => {
 
         <div
         style={{
-          width: "50%",
-          height: "100px", // 높이 지정 필수!
+          width: "100%",
+          height: "200px", // 높이 지정 필수!
           background:
             "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
           display: "flex",
