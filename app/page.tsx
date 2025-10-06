@@ -1,100 +1,291 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-const CodeWave: React.FC = () => {
+const ClubPage: React.FC = () => {
+  const logoBlue = '#1A237E';
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setFadeIn(true), 300);
-    return () => clearTimeout(timer);
+    setFadeIn(true);
   }, []);
 
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
-    <div
-      style={{
-        background: "#fff",
-        minHeight: "100vh",
-        color: "#000",
-        fontFamily: "'Noto Sans KR', sans-serif",
-        overflowX: "hidden", // 모바일 가로 스크롤 방지
-      }}
-    >
-      <div style={{ maxWidth: 950, margin: "0 auto", padding: "0 16px" }}>
-        {/* 헤더 */}
-        <header
+    <>
+      <header
+        style={{
+          width: '100%',
+          backgroundColor: '#fff',
+          color: logoBlue,
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: '1rem 2rem',
+          boxSizing: 'border-box',
+          position: 'sticky',
+          top: 0,
+          zIndex: 1000,
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
+          <h3
+            style={{
+              fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+              fontSize: '1.6rem',
+              fontWeight: 900,
+              margin: 0,
+              letterSpacing: '-1px',
+            }}
+          >
+            홍대부중 코드웨이브
+          </h3>
+          <img
+            src="/codewav.ico"
+            alt="코드웨이브 로고"
+            style={{
+              height: '1.6rem',
+              width: 'auto',
+            }}
+          />
+        </div>
+
+        <nav style={{ display: 'flex', gap: '1.5rem' }}>
+          <button
+            onClick={() => scrollToSection('intro')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            소개
+          </button>
+          <button
+            onClick={() => scrollToSection('exhibition')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            포트폴리오
+          </button>
+          <button
+            onClick={() => scrollToSection('curriculum')}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              color: logoBlue,
+              fontWeight: 'bold',
+              fontSize: '1rem',
+            }}
+          >
+            커리큘럼
+          </button>
+        </nav>
+      </header>
+
+      <main
+        style={{
+          width: '100vw',
+          minHeight: '100vh',
+          backgroundColor: logoBlue,
+          color: '#fff',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-start',
+          alignItems: 'flex-start',
+          padding: '2rem',
+          opacity: fadeIn ? 1 : 0,
+          transition: 'opacity 1.2s ease-in-out',
+          textAlign: 'left',
+          fontFamily: "'Segoe UI', 'Pretendard', sans-serif",
+          boxSizing: 'border-box',
+          overflowY: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+        }}
+      >
+        <p>
+          <img 
+            src="/cw_img.png" 
+            alt="코드웨이브 로고" 
+            width="150" 
+            height="150"
+          />
+        </p>
+
+        <h1
+          id="intro"
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: 10,
-            borderBottom: "1px solid #ccc",
-            flexWrap: "wrap", // 모바일에서 줄바꿈 허용
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
           }}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <img
-              src="https://github.com/MiruHeon/codewave-site/blob/main/public/cw_img.png?raw=true"
-              alt="코드웨이브 로고"
-              style={{ width: 60, height: 60 }}
-            />
-            <div style={{ marginLeft: 10 }}>
-              <h2 style={{ margin: 0 }}>
-                <strong>코드웨이브</strong>
-              </h2>
-              <p style={{ fontSize: "0.85rem", color: "#555", margin: 0 }}>
-                Hongik Middle School Codewave
-              </p>
-            </div>
-          </div>
-          <nav>
-            <ul
-              style={{
-                listStyle: "none",
-                display: "flex",
-                gap: 15,
-                margin: 0,
-                padding: 0,
-                alignItems: "center",
-                fontSize: "0.9rem",
-                flexWrap: "wrap", // 모바일 대응
-              }}
-            >
-              <li><a href="#portfolio">포트폴리오</a></li>
-              <li><a href="#curriculum">교육과정</a></li>
-              <li><a href="#notice">공지사항</a></li>
-              <li><a href="#news">News</a></li>
-              <li><a href="#gallery">갤러리</a></li>
-              <li><a href="#members">구성원</a></li>
-              <li>
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform"
-                  target="_blank"
-                >
-                  2기 지원
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </header>
+          코드웨이브를 소개합니다!
+        </h1>
 
-        {/* 배너 */}
-        <div
+        <p style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
+          코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다.
+          <br />
+          매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장해요.
+        </p>
+
+        <p
+          style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}
+        >
+          코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
+        </p>
+
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdUK59M375gb1LF6eAmS-S9qUoAnGu_x8WEn1Mnyjew7fD-9w/viewform?usp=dialog"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
-            width: "100%",
-            aspectRatio: "16/6.5",
-            background:
-              "url('https://github.com/MiruHeon/codewave-site/blob/main/public/Hongik_night.png?raw=true') no-repeat center/cover",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 10,
+            display: 'inline-block',
+            padding: '1rem 2rem',
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '8px',
+            textDecoration: 'none',
+            marginTop: '1.5rem',
+            fontWeight: 'bold',
+            fontSize: '1.1rem',
+            transition: 'all 0.3s ease',
           }}
-        ></div>
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = logoBlue;
+            e.currentTarget.style.color = '#fff';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = '#fff';
+            e.currentTarget.style.color = logoBlue;
+          }}
+        >
+          지원서 작성하러 가기
+        </a>
 
         <h1
           style={{
-            textAlign: "center",
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
+            marginTop: '2rem',
+          }}
+        >
+          포트폴리오
+        </h1>
+        
+        <a
+          href="/chaja-pdf.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="/chaja-img.png"
+            alt="포트폴리오 미리보기"
+            style={{
+              width: "400px",
+              height: "auto",
+              borderRadius: "12px",
+              cursor: "pointer",
+              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
+              transition: "transform 0.3s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = "scale(1.05)";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = "scale(1)";
+            }}
+          />
+        </a>
+
+        <h1
+          id="curriculum"
+          style={{
+            fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
+            fontSize: '2.8rem',
+            fontWeight: 900,
+            marginBottom: '1.2rem',
+            letterSpacing: '-2px',
+            marginTop: '2rem',
+          }}
+        >
+          커리큘럼
+        </h1>
+
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+          gap: '1.5rem',
+          maxWidth: '800px',
+          width: '100%',
+        }}>
+          <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>프로그래밍</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              IT 기술의 기초가 되는 프로그래밍 교육을 통해 IT 기본 소양을 통달합니다.
+            </p>
+          </div>
+
+          <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>AI</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달합니다.
+            </p>
+          </div>
+        </div>
+
+        <h1
+          style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
             fontWeight: 900,
@@ -105,271 +296,18 @@ const CodeWave: React.FC = () => {
         >
           ACHIEVE INNOVATION
         </h1>
+      </main>
 
-        {/* === 2열 레이아웃 시작 === */}
-        <style>
-          {`
-            @media (max-width: 768px) {
-              .grid-2col {
-                grid-template-columns: 1fr !important;
-              }
-            }
-          `}
-        </style>
-
-        {/* 포트폴리오 + 교육과정 */}
-        <div
-          className="grid-2col"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 20,
-            marginTop: 20,
-          }}
-        >
-          {/* 포트폴리오 */}
-          <section
-            id="portfolio"
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: 4,
-              padding: 10,
-              transform: fadeIn ? "translateX(0)" : "translateX(-50px)",
-              opacity: fadeIn ? 1 : 0,
-              transition: "all 1s ease 0.3s",
-            }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              포트폴리오
-            </h3>
-            <div
-              style={{
-                display: "flex",
-                gap: 20,
-                flexWrap: "wrap",
-                marginTop: 10,
-              }}
-            >
-              <a href="/chaja-pdf.pdf" target="_blank" rel="noreferrer">
-                <img
-                  src="https://github.com/MiruHeon/codewave-site/blob/main/public/chaja-img.png?raw=true"
-                  alt="포트폴리오"
-                  style={{
-                    width: "100%",
-                    maxWidth: 300,
-                    border: "1px solid #ccc",
-                    borderRadius: 4,
-                    transition: "transform 0.3s",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.05)")
-                  }
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")}
-                />
-              </a>
-              <a href="/chatgppti.pdf" target="_blank" rel="noreferrer">
-                <img
-                  src="https://github.com/MiruHeon/codewave-site/blob/main/public/chatGepeti-img.png?raw=true"
-                  alt="포트폴리오"
-                  style={{
-                    width: "100%",
-                    maxWidth: 300,
-                    border: "1px solid #ccc",
-                    borderRadius: 4,
-                    transition: "transform 0.3s",
-                  }}
-                  onMouseEnter={(e) =>
-                    (e.currentTarget.style.transform = "scale(1.05)")}
-                  onMouseLeave={(e) =>
-                    (e.currentTarget.style.transform = "scale(1)")}
-                />
-              </a>
-            </div>
-          </section>
-
-          {/* 교육과정 */}
-          <section
-            id="curriculum"
-            style={{
-              border: "1px solid #ccc",
-              borderRadius: 4,
-              padding: 10,
-              transform: fadeIn ? "translateX(0)" : "translateX(50px)",
-              opacity: fadeIn ? 1 : 0,
-              transition: "all 1s ease 0.5s",
-            }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              교육과정
-            </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-              <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>프로그래밍</li>
-              <li style={{ padding: 6, borderBottom: "1px dotted #ddd" }}>자료구조와 알고리즘</li>
-              <li style={{ padding: 6 }}>AI</li>
-            </ul>
-          </section>
-        </div>
-
-        {/* 공지사항 + News */}
-        <div
-          className="grid-2col"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 20,
-            marginTop: 20,
-          }}
-        >
-          <section
-            id="notice"
-            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              공지사항
-            </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-              <li>1대 회장 류용헌 당선</li>
-              <li>1대 차장 신지욱 당선</li>
-              <li>홍대부중 동아리 '코드웨이브' 신설</li>
-            </ul>
-          </section>
-
-          <section
-            id="news"
-            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              News
-            </h3>
-            <ul style={{ listStyle: "none", margin: 0, padding: 10 }}>
-              <li>11월 8일 홍대부고 스파이크 프라임 로봇 캠프 주최안내</li>
-            </ul>
-          </section>
-        </div>
-
-        {/* 갤러리 + 구성원 */}
-        <div
-          className="grid-2col"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 20,
-            marginTop: 20,
-          }}
-        >
-          <section
-            id="gallery"
-            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              갤러리
-            </h3>
-            <img
-              src="https://github.com/MiruHeon/codewave-site/blob/main/public/friend.jpg?raw=true"
-              alt="gallery1"
-              style={{
-                width: "100%",
-                maxWidth: 400,
-                marginTop: 10,
-                borderRadius: 4,
-                cursor: "pointer",
-              }}
-              onClick={(e) => window.open(e.currentTarget.src, "_blank")}
-            />
-          </section>
-
-          <section
-            id="members"
-            style={{ border: "1px solid #ccc", borderRadius: 4, padding: 10 }}
-          >
-            <h3
-              style={{
-                background: "#2d2a8f",
-                color: "white",
-                margin: 0,
-                padding: 10,
-              }}
-            >
-              구성원
-            </h3>
-            <div
-              style={{
-                marginTop: 10,
-                padding: 10,
-                border: "1px solid #ddd",
-                borderRadius: 6,
-                background: "#f9f9f9",
-              }}
-            >
-              <p><strong>류용헌</strong> - 코드웨이브 부장</p>
-              <p><strong>전공분야:</strong> AI</p>
-              <p><strong>학년/반:</strong> 2학년 5반</p>
-              <p><strong>Tel.:</strong> 미제공</p>
-              <p><strong>E-mail:</strong> imjamminii@gmail.com</p>
-            </div>
-          </section>
-        </div>
-        {/* === 2열 레이아웃 끝 === */}
-
-        {/* Footer */}
-        <footer
-          style={{
-            borderTop: "1px solid #ccc",
-            textAlign: "center",
-            padding: 20,
-            background: "#f8f8f8",
-            marginTop: 20,
-          }}
-        >
-          <a
-            href="https://hongik.sen.ms.kr/"
-            target="_blank"
-            rel="noreferrer"
-            style={{ textDecoration: "none", color: "inherit" }}
-          >
-            <p>Hongik Middle School</p>
-          </a>
-          <p>ⓒ 류용헌</p>
-        </footer>
-      </div>
-    </div>
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+        main::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
+    </>
   );
 };
 
-export default CodeWave;
+export default ClubPage;
