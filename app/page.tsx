@@ -304,9 +304,8 @@ const ClubPage: React.FC = () => {
               프로그래밍 기술의 집합체인 AI를 배움으로써, 전문 지식을 통달한다.
             </p>
           </div>
-        </div>
 
-        <div style={{
+          <div style={{
             backgroundColor: '#fff',
             color: logoBlue,
             borderRadius: '12px',
@@ -323,7 +322,7 @@ const ClubPage: React.FC = () => {
           >
             <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>정보보호</h3>
             <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
-              정보의 취약점을 하나하나 찾아보면서 정보를 보호하는 방법을 터득한다. 
+              정보의 취약점을 하나하나 찾아보면서 정보를 보호하는 방법을 터득한다.
             </p>
           </div>
         </div>
