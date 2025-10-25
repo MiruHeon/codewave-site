@@ -306,6 +306,28 @@ const ClubPage: React.FC = () => {
           </div>
         </div>
 
+        <div style={{
+            backgroundColor: '#fff',
+            color: logoBlue,
+            borderRadius: '12px',
+            padding: '1.5rem',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s ease',
+          }}
+            onMouseEnter={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(-5px)";
+            }}
+            onMouseLeave={(e) => {
+              (e.currentTarget as HTMLDivElement).style.transform = "translateY(0)";
+            }}
+          >
+            <h3 style={{ margin: '0 0 0.8rem 0', fontSize: '1.3rem', fontWeight: 800 }}>정보보호</h3>
+            <p style={{ fontSize: '1rem', lineHeight: '1.6' }}>
+              정보의 취약점을 하나하나 찾아보면서 정보를 보호하는 방법을 터득한다. 
+            </p>
+          </div>
+        </div>
+
         <h1
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
