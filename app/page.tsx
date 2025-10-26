@@ -23,7 +23,7 @@ const ClubPage: React.FC = () => {
         style={{
           width: '100%',
           backgroundColor: '#121212',
-          color: logoBlue,
+          color: "#fff",
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
