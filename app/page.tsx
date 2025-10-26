@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 
 const ClubPage: React.FC = () => {
-  const logoBlue = '#1A237E';
+  const logoBlue = '#2d2a8f';
   const [fadeIn, setFadeIn] = useState(false);
 
   useEffect(() => {
