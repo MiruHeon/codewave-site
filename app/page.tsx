@@ -22,7 +22,7 @@ const ClubPage: React.FC = () => {
       <header
         style={{
           width: '100%',
-          backgroundColor: '#fff',
+          backgroundColor: '#121212',
           color: logoBlue,
           display: 'flex',
           justifyContent: 'space-between',
@@ -44,7 +44,7 @@ const ClubPage: React.FC = () => {
               letterSpacing: '-1px',
             }}
           >
-            홍대부중 코드웨이브
+            CODEWAVE
           </h3>
         </div>
 
