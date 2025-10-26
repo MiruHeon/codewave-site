@@ -55,7 +55,7 @@ const ClubPage: React.FC = () => {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: logoBlue,
+              color: "#fff",
               fontWeight: 'bold',
               fontSize: '1rem',
             }}
@@ -68,7 +68,7 @@ const ClubPage: React.FC = () => {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: logoBlue,
+              color: "#fff",
               fontWeight: 'bold',
               fontSize: '1rem',
             }}
@@ -81,7 +81,7 @@ const ClubPage: React.FC = () => {
               background: 'none',
               border: 'none',
               cursor: 'pointer',
-              color: logoBlue,
+              color: "#fff",
               fontWeight: 'bold',
               fontSize: '1rem',
             }}
@@ -176,6 +176,7 @@ const ClubPage: React.FC = () => {
         </a>
 
         <h1
+          id="exhibition"
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
             fontSize: '2.8rem',
@@ -187,6 +188,7 @@ const ClubPage: React.FC = () => {
         >
           포트폴리오
         </h1>
+
         
         <a
           href="/chaja-pdf.pdf"
