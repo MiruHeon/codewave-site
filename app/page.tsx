@@ -46,14 +46,6 @@ const ClubPage: React.FC = () => {
           >
             홍대부중 코드웨이브
           </h3>
-          <img
-            src="/codewav.ico"
-            alt="코드웨이브 로고"
-            style={{
-              height: '1.6rem',
-              width: 'auto',
-            }}
-          />
         </div>
 
         <nav style={{ display: 'flex', gap: '1.5rem' }}>
