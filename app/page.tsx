@@ -1,10 +1,12 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { Sun, Moon } from 'lucide-react';
 
 const ClubPage: React.FC = () => {
   const logoBlue = '#2d2a8f';
   const [fadeIn, setFadeIn] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
     setFadeIn(true);
@@ -17,23 +19,37 @@ const ClubPage: React.FC = () => {
     }
   };
 
+  const headerStyle = {
+    width: '100%',
+    backgroundColor: isDarkMode ? '#121212' : '#ffffff',
+    color: isDarkMode ? '#fff' : '#121212',
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '1rem 2rem',
+    boxSizing: 'border-box',
+    position: 'sticky' as const,
+    top: 0,
+    zIndex: 1000,
+    boxShadow: isDarkMode
+      ? '0 2px 8px rgba(0,0,0,0.4)'
+      : '0 2px 8px rgba(0,0,0,0.1)',
+    transition: 'all 0.3s ease',
+  };
+
+  const buttonStyle = {
+    background: 'none',
+    border: 'none',
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    fontSize: '1rem',
+    color: isDarkMode ? '#fff' : '#121212',
+    transition: 'color 0.3s ease',
+  };
+
   return (
     <>
-      <header
-        style={{
-          width: '100%',
-          backgroundColor: '#121212',
-          color: "#fff",
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          padding: '1rem 2rem',
-          boxSizing: 'border-box',
-          position: 'sticky',
-          top: 0,
-          zIndex: 1000,
-        }}
-      >
+      <header style={headerStyle}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
           <h3
             style={{
@@ -48,45 +64,31 @@ const ClubPage: React.FC = () => {
           </h3>
         </div>
 
-        <nav style={{ display: 'flex', gap: '1.5rem' }}>
-          <button
-            onClick={() => scrollToSection('intro')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: "#fff",
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
+        <nav style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <button onClick={() => scrollToSection('intro')} style={buttonStyle}>
             소개
           </button>
-          <button
-            onClick={() => scrollToSection('exhibition')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: "#fff",
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
+          <button onClick={() => scrollToSection('exhibition')} style={buttonStyle}>
             포트폴리오
           </button>
-          <button
-            onClick={() => scrollToSection('curriculum')}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              color: "#fff",
-              fontWeight: 'bold',
-              fontSize: '1rem',
-            }}
-          >
+          <button onClick={() => scrollToSection('curriculum')} style={buttonStyle}>
             커리큘럼
+          </button>
+
+          <button
+            onClick={() => setIsDarkMode((prev) => !prev)}
+            style={{
+              ...buttonStyle,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              padding: '0.4rem',
+              borderRadius: '8px',
+              backgroundColor: isDarkMode ? '#1e1e1e' : '#f5f5f5',
+            }}
+            aria-label="Toggle dark mode"
+          >
+            {isDarkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
         </nav>
       </header>
@@ -112,14 +114,8 @@ const ClubPage: React.FC = () => {
           msOverflowStyle: 'none',
         }}
       >
-
         <p>
-          <img 
-            src="/cw_img.png" 
-            alt="코드웨이브 로고" 
-            width="150" 
-            height="150"
-          />
+          <img src="/cw_img.png" alt="코드웨이브 로고" width="150" height="150" />
         </p>
 
         <h1
@@ -141,9 +137,7 @@ const ClubPage: React.FC = () => {
           매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장합니다
         </p>
 
-        <p
-          style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}
-        >
+        <p style={{ marginTop: '2rem', fontSize: '1.05rem', maxWidth: '600px' }}>
           코드웨이브에서 현재 2기 멤버를 모집하니, 관심 있는 분들은 아래 지원서 링크를 통해 지원해 주세요.
         </p>
 
@@ -189,28 +183,23 @@ const ClubPage: React.FC = () => {
           포트폴리오
         </h1>
 
-        
-        <a
-          href="/chaja-pdf.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="/chaja-pdf.pdf" target="_blank" rel="noopener noreferrer">
           <img
             src="/chaja-img.png"
             alt="포트폴리오 미리보기"
             style={{
-              width: "400px",
-              height: "auto",
-              borderRadius: "12px",
-              cursor: "pointer",
-              boxShadow: "0 4px 12px rgba(0,0,0,0.2)",
-              transition: "transform 0.3s ease",
+              width: '400px',
+              height: 'auto',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+              transition: 'transform 0.3s ease',
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.05)";
+              e.currentTarget.style.transform = 'scale(1.05)';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
+              e.currentTarget.style.transform = 'scale(1)';
             }}
           />
         </a>
