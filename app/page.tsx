@@ -126,7 +126,7 @@ const ClubPage: React.FC = () => {
           id="intro"
           style={{
             fontFamily: "'Lexend Mega', 'Segoe UI', 'Pretendard', sans-serif",
-            fontSize: '2.8rem',
+            fontSize: '3.5rem',
             fontWeight: 900,
             marginBottom: '1.2rem',
             letterSpacing: '-2px',
@@ -135,7 +135,7 @@ const ClubPage: React.FC = () => {
           코드웨이브를 소개합니다!
         </h1>
 
-        <p style={{ fontSize: '1.15rem', lineHeight: '1.7', maxWidth: '600px' }}>
+        <p style={{ fontSize: '2rem', lineHeight: '1.7', maxWidth: '600px' }}>
           코드웨이브는 자율성과 창의성이 보장되는 IT 동아리입니다
           <br />
           매달 정기 모임과 다양한 프로젝트, 교육을 통해 함께 성장합니다
