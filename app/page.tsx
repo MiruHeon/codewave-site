@@ -44,7 +44,7 @@ const ClubPage: React.FC = () => {
               letterSpacing: '-1px',
             }}
           >
-            CODEWAVE
+            코드웨이브
           </h3>
         </div>
 
